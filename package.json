@@ -1,9 +1,9 @@
 {
-  "name": "ts-express-angular2-node-boilerplate",
-  "version": "1.0.2",
-  "description": "Light-weight startup boilerplate for angular2 with typescript and expressjs",
-  "repository": "https://github.com/tngan/ts-express-angular2-node-boilerplate.git",
-  "author": "tngan",
+  "name": "sportsemblr",
+  "version": "1.0.0",
+  "description": "App to find people nearby to play sports",
+  "repository": "https://github.com/ng2-slavs/Sportsemblr.git",
+  "author": "ng2-slavs",
   "license": "MIT",
   "keywords": [
     "angular2",
