@@ -11,15 +11,16 @@ const router = express.Router();
 const User = require('./models/user.model');
 
 const passportConfig = require('./config/passport/passport')(User);
-const data = require('./data');
-
-var routes = require('./routes/index')(app, router, passportConfig, data);
+const data = require('./data')({
+    User
+});
 
 app.use(passportConfig.passport.initialize());
 app.use(passportConfig.passport.session());
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -42,5 +43,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     console.log(err);
 });
+
+var routes = require('./routes/index')(app, router, passportConfig, data);
 
 module.exports = app;

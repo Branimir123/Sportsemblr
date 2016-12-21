@@ -13,30 +13,20 @@ var http_1 = require("@angular/http");
 var UserService = (function () {
     function UserService(http) {
         this.http = http;
+        this.signupUrl = '/api/signup';
     }
-    UserService.prototype.getAll = function () {
-        return this.http.get('/api/users', this.jwt()).map(function (response) { return response.json(); });
-    };
-    UserService.prototype.getById = function (id) {
-        return this.http.get('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
-    };
     UserService.prototype.create = function (user) {
-        return this.http.post('/api/users', user, this.jwt()).map(function (response) { return response.json(); });
+        return this.http.post('/api/signup', { user: user }, this.getHeaders())
+            .map(function (response) { return response.json(); });
     };
-    UserService.prototype.update = function (user) {
-        return this.http.put('/api/users/' + user.id, user, this.jwt()).map(function (response) { return response.json(); });
-    };
-    UserService.prototype.delete = function (id) {
-        return this.http.delete('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
-    };
-    // private helper methods
-    UserService.prototype.jwt = function () {
-        // create authorization header with jwt token
+    UserService.prototype.getHeaders = function () {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (currentUser && currentUser.token) {
-            var headers = new http_1.Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-            return new http_1.RequestOptions({ headers: headers });
+            headers.append('Authorization', 'Bearer ' + currentUser.token);
         }
+        return new http_1.RequestOptions({ headers: headers });
     };
     return UserService;
 }());

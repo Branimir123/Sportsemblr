@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = function (models) {
   const data = {}
 
-  fs.readdirSync('./app/data')
+  fs.readdirSync('./server/data')
     .filter(x => x.includes('-data'))
     .forEach((file) => {
       const dataModule = require(path.join(__dirname, file))(models)
@@ -13,7 +13,7 @@ module.exports = function (models) {
         .forEach((key) => {
           data[key] = dataModule[key]
         })
-    })
+    });
 
   return data
 }
