@@ -1,7 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const mongoose = require('mongoose');
 
-module.exports = function (models) {
+module.exports = function (models, connectionString) {
+  mongoose.Promise = global.Promise;
+  mongoose.connect(connectionString);
+
+  mongoose.connection.on('error', () => {
+    console.log('MongoDB connection error. Please make sure MongoDB is running.');
+    process.exit();
+  });
+
   const data = {}
 
   fs.readdirSync('./server/data')

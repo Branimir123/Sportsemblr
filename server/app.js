@@ -8,11 +8,13 @@ var favicon = require('serve-favicon');
 var app = express();
 const router = express.Router();
 
+const connectionString = process.env.connectionString || 'mongodb://localhost/ng2';
+
 const User = require('./models/user.model');
 
 const data = require('./data')({
     User
-});
+}, connectionString);
 const passportConfig = require('./config/passport/passport')(data);
 
 app.use(passportConfig.passport.initialize());
