@@ -12,23 +12,19 @@ const userSchema = new mongoose.Schema({
         unique: true
     },
     password: String,
-    passwordResetToken: String,
-    passwordResetExpires: Date,
 
     description: {
         type: String
     },
 
-    facebook: String,
-    twitter: String,
-    google: String,
-    instagram: String,
-    tokens: Array,
-
     roles: {
         type: Array,
         default: ['standart']
     },
+    ratings: [{
+        sport: string,
+        rating: number
+    }],
 
     userDescription: String,
 
@@ -41,7 +37,7 @@ const userSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true
-})
+});
 
 /**
  * Password hash middleware.
