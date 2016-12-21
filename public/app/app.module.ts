@@ -1,3 +1,4 @@
+import { UserService } from './core/services/user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -7,11 +8,11 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
 import { AuthGuard } from './guards/index';
-import { AuthenticationService, UserService } from './core/services/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AlertComponent } from './alert/index';
+
 
 @NgModule({
     imports: [
@@ -29,9 +30,7 @@ import { AlertComponent } from './alert/index';
     ],
     providers: [
         AuthGuard,
-        AuthenticationService,
-        UserService,
-
+        UserService
     ],
     bootstrap: [AppComponent]
 })

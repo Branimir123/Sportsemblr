@@ -12,7 +12,7 @@ module.exports = function (data, passport) {
         if (!user) {
           return res.status(400)
             .send({
-              error: 'Account with that email already exists.'
+              error: 'User not found'
             });
         }
 

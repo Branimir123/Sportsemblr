@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var user_service_1 = require("./core/services/user.service");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
@@ -15,11 +16,10 @@ var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var app_routing_1 = require("./app.routing");
 var index_1 = require("./guards/index");
-var index_2 = require("./core/services/index");
-var index_3 = require("./home/index");
-var index_4 = require("./login/index");
-var index_5 = require("./register/index");
-var index_6 = require("./alert/index");
+var index_2 = require("./home/index");
+var index_3 = require("./login/index");
+var index_4 = require("./register/index");
+var index_5 = require("./alert/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,15 +35,14 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            index_3.HomeComponent,
-            index_4.LoginComponent,
-            index_5.RegisterComponent,
-            index_6.AlertComponent
+            index_2.HomeComponent,
+            index_3.LoginComponent,
+            index_4.RegisterComponent,
+            index_5.AlertComponent
         ],
         providers: [
             index_1.AuthGuard,
-            index_2.AuthenticationService,
-            index_2.UserService,
+            user_service_1.UserService
         ],
         bootstrap: [app_component_1.AppComponent]
     }),
