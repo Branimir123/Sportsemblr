@@ -22,8 +22,8 @@ const userSchema = new mongoose.Schema({
         default: ['standart']
     },
     ratings: [{
-        sport: string,
-        rating: number
+        sport: String,
+        rating: Number
     }],
 
     userDescription: String,

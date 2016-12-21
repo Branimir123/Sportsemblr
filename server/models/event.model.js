@@ -7,7 +7,7 @@ const eventSchema = new mongoose.Schema({
         type: String
     },
     sport: {
-        type: string,
+        type: String,
         required: true
     },
     date: {
@@ -15,11 +15,11 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     peopleNeeded: {
-        type: number,
+        type: Number,
         required: true
     },
     price: {
-        type: number,
+        type: Number,
         required: true
     },
     participants: [String]
