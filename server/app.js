@@ -10,10 +10,10 @@ const router = express.Router();
 
 const User = require('./models/user.model');
 
-const passportConfig = require('./config/passport/passport')(User);
 const data = require('./data')({
     User
 });
+const passportConfig = require('./config/passport/passport')(data);
 
 app.use(passportConfig.passport.initialize());
 app.use(passportConfig.passport.session());

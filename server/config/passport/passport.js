@@ -5,31 +5,23 @@ const OpenIDStrategy = require('passport-openid').Strategy;
 const OAuthStrategy = require('passport-oauth').OAuthStrategy;
 const OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
-module.exports = (User) => {
+module.exports = (data) => {
   passport.serializeUser((user, done) => {
     done(null, user.id);
   });
 
   passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-      done(err, user);
-    });
+    data.findUserById(id)
+      .then(user => {
+        done(null, user);
+      })
+      .catch(err => {
+        done(err, null);
+      });
   });
 
   // Sign in with Email and Password.
-  require('./local-strategy')(passport, User);
-
-  // // Sign in with Facebook.
-  // require('./facebook-strategy')(passport, User);
-
-  // // Sign in with Twitter.
-  // require('./twitter-strategy')(passport, User);
-
-  // // Sign in with Google.
-  // require('./google-strategy')(passport, User);
-
-  // // Sign in with Instagram.
-  // require('./instagram-strategy')(passport, User);
+  require('./local-strategy')(passport, data);
 
   return {
     passport: passport,
