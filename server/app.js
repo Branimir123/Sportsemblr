@@ -8,10 +8,15 @@ var favicon = require('serve-favicon');
 var app = express();
 const router = express.Router();
 
-const passportConfig = require('./config/passport/passport');
+const User = require('./models/user.model');
+
+const passportConfig = require('./config/passport/passport')(User);
 const data = require('./data');
 
 var routes = require('./routes/index')(app, router, passportConfig, data);
+
+app.use(passportConfig.passport.initialize());
+app.use(passportConfig.passport.session());
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
