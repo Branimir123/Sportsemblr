@@ -33,7 +33,9 @@ module.exports = function (data, passport) {
       res.send(200);
     },
     postSignup: (req, res, next) => {
-      data.findUserByEmail(req.body.email)
+      const user = req.body.user;
+
+      data.findUserByEmail(user.email)
         .then((existingUser) => {
           if (existingUser) {
             return res.status(400)
@@ -42,7 +44,7 @@ module.exports = function (data, passport) {
               });
           }
 
-          return data.findUserByUsername(req.body.username);
+          return data.findUserByUsername(user.username);
         })
         .then((existingUser) => {
           if (existingUser) {
@@ -52,7 +54,7 @@ module.exports = function (data, passport) {
               });
           }
 
-          return data.registerUser(req.body.email, req.body.password, req.body.username, req.body.description);
+          return data.registerUser(user.email, user.password, user.username, user.description);
         })
         .then((user) => {
           req.logIn(user, (err) => {
@@ -63,7 +65,10 @@ module.exports = function (data, passport) {
             return res.status(200);
           });
         })
-        .catch(err => next(err));
+        .catch(err => {
+          console.log(err);
+          return next(err);
+        });
     }
   };
 };

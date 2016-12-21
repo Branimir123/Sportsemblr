@@ -25,9 +25,11 @@ export class RegisterComponent {
         this.userService.create(this.model)
             .subscribe(
             data => {
+                console.log(data);
                 this.router.navigate(['/login']);
             },
             error => {
+                console.log(error);
                 this.loading = false;
             });
     }

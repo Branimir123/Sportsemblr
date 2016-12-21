@@ -24,8 +24,10 @@ var RegisterComponent = (function () {
         this.loading = true;
         this.userService.create(this.model)
             .subscribe(function (data) {
+            console.log(data);
             _this.router.navigate(['/login']);
         }, function (error) {
+            console.log(error);
             _this.loading = false;
         });
     };

@@ -18,10 +18,13 @@ export class UserService {
     private getHeaders() {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
+
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
         if (currentUser && currentUser.token) {
             headers.append('Authorization', 'Bearer ' + currentUser.token);
         }
+
         return new RequestOptions({ headers: headers });
     }
 }
