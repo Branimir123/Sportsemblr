@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var index_1 = require("../core/services/index");
+var user_1 = require("../core/models/user");
 var RegisterComponent = (function () {
     function RegisterComponent(router, userService) {
         this.router = router;
         this.userService = userService;
-        this.model = {};
         this.loading = false;
+        this.model = new user_1.User();
     }
     RegisterComponent.prototype.register = function () {
         var _this = this;
