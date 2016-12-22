@@ -20,6 +20,7 @@ var index_2 = require("./home/index");
 var index_3 = require("./login/index");
 var index_4 = require("./register/index");
 var index_5 = require("./alert/index");
+var navbar_component_1 = require("./shared/navbar.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +39,8 @@ AppModule = __decorate([
             index_2.HomeComponent,
             index_3.LoginComponent,
             index_4.RegisterComponent,
-            index_5.AlertComponent
+            index_5.AlertComponent,
+            navbar_component_1.NavigationComponent
         ],
         providers: [
             index_1.AuthGuard,

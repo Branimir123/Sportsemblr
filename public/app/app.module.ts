@@ -12,7 +12,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AlertComponent } from './alert/index';
-
+import { NavigationComponent } from './shared/navbar.component';
 
 @NgModule({
     imports: [
@@ -26,7 +26,8 @@ import { AlertComponent } from './alert/index';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        AlertComponent
+        AlertComponent,
+        NavigationComponent
     ],
     providers: [
         AuthGuard,
