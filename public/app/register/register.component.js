@@ -22,10 +22,9 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.register = function () {
         var _this = this;
         this.loading = true;
-        this.userService.create(this.model)
+        this.userService.register(this.model)
             .subscribe(function (data) {
-            console.log(data);
-            _this.router.navigate(['/login']);
+            _this.router.navigateByUrl('/');
         }, function (error) {
             console.log(error);
             _this.loading = false;

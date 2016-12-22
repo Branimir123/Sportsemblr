@@ -22,11 +22,10 @@ export class RegisterComponent {
     register() {
         this.loading = true;
 
-        this.userService.create(this.model)
+        this.userService.register(this.model)
             .subscribe(
             data => {
-                console.log(data);
-                this.router.navigate(['/login']);
+                this.router.navigateByUrl('/');
             },
             error => {
                 console.log(error);

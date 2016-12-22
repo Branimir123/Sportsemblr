@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         // reset login status
-        this.userService.logout();
+        // this.userService.logout();
     }
 
     login() {
@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
             .subscribe(
             data => {
                 this.router.navigateByUrl(this.returnUrl);
-                // this.router.navigate([this.returnUrl]);
             },
             error => {
                 this.loading = false;

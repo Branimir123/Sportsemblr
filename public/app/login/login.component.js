@@ -23,7 +23,7 @@ var LoginComponent = (function () {
     }
     LoginComponent.prototype.ngOnInit = function () {
         // reset login status
-        this.userService.logout();
+        // this.userService.logout();
     };
     LoginComponent.prototype.login = function () {
         var _this = this;
@@ -31,7 +31,6 @@ var LoginComponent = (function () {
         this.userService.login(this.model.email, this.model.password)
             .subscribe(function (data) {
             _this.router.navigateByUrl(_this.returnUrl);
-            // this.router.navigate([this.returnUrl]);
         }, function (error) {
             _this.loading = false;
         });

@@ -10,8 +10,7 @@ export class UserService {
 
     constructor(private http: Http) { }
 
-
-    create(user: User) {
+    register(user: User) {
         return this.http.post('/api/signup', { user }, this.getHeaders())
             .map((response: Response) => response.json());
     }
@@ -34,15 +33,18 @@ export class UserService {
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+
+                if (response.ok) {
+                    console.log(user);
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
             });
     }
 
     logout() {
-        // remove user from local storage to log user out
+        let user = JSON.parse(localStorage.getItem('currentUser'));
         localStorage.removeItem('currentUser');
+
+        return this.http.post('api/logout', user);
     }
 }

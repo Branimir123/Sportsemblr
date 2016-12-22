@@ -16,7 +16,7 @@ var UserService = (function () {
         this.http = http;
         this.signupUrl = '/api/signup';
     }
-    UserService.prototype.create = function (user) {
+    UserService.prototype.register = function (user) {
         return this.http.post('/api/signup', { user: user }, this.getHeaders())
             .map(function (response) { return response.json(); });
     };
@@ -34,15 +34,16 @@ var UserService = (function () {
             .map(function (response) {
             // login successful if there's a jwt token in the response
             var user = response.json();
-            if (user && user.token) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
+            if (response.ok) {
+                console.log(user);
                 localStorage.setItem('currentUser', JSON.stringify(user));
             }
         });
     };
     UserService.prototype.logout = function () {
-        // remove user from local storage to log user out
+        var user = JSON.parse(localStorage.getItem('currentUser'));
         localStorage.removeItem('currentUser');
+        return this.http.post('api/logout', user);
     };
     return UserService;
 }());

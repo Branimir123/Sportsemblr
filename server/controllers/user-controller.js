@@ -23,7 +23,9 @@ module.exports = function (data, passport) {
 
           return res.status(200)
             .send({
-              msg: 'Success! You are logged in.'
+              username: user.username,
+              token: user.id,
+              name: user.name
             });
         });
       })(req, res, next);
@@ -54,7 +56,7 @@ module.exports = function (data, passport) {
               });
           }
 
-          return data.registerUser(user.email, user.password, user.username, user.description);
+          return data.registerUser(user.email, user.password, user.username, user.description, user.name);
         })
         .then((user) => {
           req.logIn(user, (err) => {

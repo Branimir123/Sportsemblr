@@ -9,14 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var index_1 = require("../core/services/index");
 var HomeComponent = (function () {
-    function HomeComponent(userService) {
-        this.userService = userService;
-        this.users = [];
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    function HomeComponent() {
     }
     HomeComponent.prototype.ngOnInit = function () {
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     };
     return HomeComponent;
 }());
@@ -25,7 +22,7 @@ HomeComponent = __decorate([
         moduleId: module.id,
         templateUrl: 'home.component.html'
     }),
-    __metadata("design:paramtypes", [index_1.UserService])
+    __metadata("design:paramtypes", [])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map
