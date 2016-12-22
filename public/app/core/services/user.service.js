@@ -15,6 +15,7 @@ var UserService = (function () {
     function UserService(http) {
         this.http = http;
         this.signupUrl = '/api/signup';
+        this.localStorageUser = 'currentUser';
     }
     UserService.prototype.register = function (user) {
         return this.http.post('/api/signup', { user: user }, this.getHeaders())
@@ -23,27 +24,27 @@ var UserService = (function () {
     UserService.prototype.getHeaders = function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        var currentUser = JSON.parse(localStorage.getItem(this.localStorageUser));
         if (currentUser && currentUser.token) {
             headers.append('Authorization', 'Bearer ' + currentUser.token);
         }
         return new http_1.RequestOptions({ headers: headers });
     };
     UserService.prototype.login = function (email, password) {
+        var _this = this;
         return this.http.post('/api/login', { email: email, password: password })
             .map(function (response) {
             // login successful if there's a jwt token in the response
             var user = response.json();
             if (response.ok) {
-                console.log(user);
-                localStorage.setItem('currentUser', JSON.stringify(user));
+                localStorage.setItem(_this.localStorageUser, JSON.stringify(user));
             }
         });
     };
     UserService.prototype.logout = function () {
-        var user = JSON.parse(localStorage.getItem('currentUser'));
-        localStorage.removeItem('currentUser');
-        return this.http.post('api/logout', user);
+        var user = JSON.parse(localStorage.getItem(this.localStorageUser));
+        localStorage.removeItem(this.localStorageUser);
+        return this.http.get('api/logout');
     };
     return UserService;
 }());

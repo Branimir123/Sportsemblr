@@ -7,6 +7,7 @@ import { User } from '../models/index';
 @Injectable()
 export class UserService {
     private signupUrl = '/api/signup';
+    private localStorageUser = 'currentUser';
 
     constructor(private http: Http) { }
 
@@ -19,7 +20,7 @@ export class UserService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        let currentUser = JSON.parse(localStorage.getItem(this.localStorageUser));
 
         if (currentUser && currentUser.token) {
             headers.append('Authorization', 'Bearer ' + currentUser.token);
@@ -35,16 +36,15 @@ export class UserService {
                 let user = response.json();
 
                 if (response.ok) {
-                    console.log(user);
-                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem(this.localStorageUser, JSON.stringify(user));
                 }
             });
     }
 
     logout() {
-        let user = JSON.parse(localStorage.getItem('currentUser'));
-        localStorage.removeItem('currentUser');
+        let user = JSON.parse(localStorage.getItem(this.localStorageUser));
+        localStorage.removeItem(this.localStorageUser);
 
-        return this.http.post('api/logout', user);
+        return this.http.get('api/logout');
     }
 }
