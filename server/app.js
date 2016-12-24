@@ -10,12 +10,24 @@ const router = express.Router();
 
 const connectionString = process.env.connectionString || 'mongodb://localhost/ng2';
 
-const User = require('./models/user.model');
+const User = require('./models/user.model'),
+    Event = require('./models/event.model');
 
-const data = require('./data')({
-    User
-}, connectionString);
+const models = {
+    User,
+    Event
+};
+
+const data = require('./data')(models, connectionString);
 const passportConfig = require('./config/passport/passport')(data);
+
+const userController = require('./controllers/user-controller')(data, passportConfig.passport),
+    eventController = require('./controllers/event-controller')(data);
+
+const controllers = {
+    userController,
+    eventController
+};
 
 app.use(passportConfig.passport.initialize());
 app.use(passportConfig.passport.session());
@@ -46,6 +58,6 @@ app.use(function (err, req, res, next) {
     console.log(err);
 });
 
-var routes = require('./routes/index')(app, router, passportConfig, data);
+var routes = require('./routes/index')(app, router, passportConfig, controllers);
 
 module.exports = app;

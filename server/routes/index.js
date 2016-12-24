@@ -1,7 +1,8 @@
 const authRoutes = require('./authentication.router');
 
-module.exports = (app, router, passportConfig, data) => {
-    require('./authentication.router')(app, router, passportConfig.passport, data);
+module.exports = (app, router, passportConfig, controllers) => {
+    require('./authentication.router')(router, controllers.userController, passportConfig);
+    require('./event.router')(router, controllers.eventController, passportConfig);
 
     router.use((req, res, next) => {
         next();

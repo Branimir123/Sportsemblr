@@ -1,7 +1,5 @@
-module.exports = (app, router, passport, data) => {
-  const userController = require('../controllers/user-controller')(data, passport);
-
+module.exports = (router, userController, passportConfig) => {
   router.post('/login', userController.postLogin);
-  router.get('/logout', userController.logout);
+  router.get('/logout', passportConfig.isAuthenticated, userController.logout);
   router.post('/signup', userController.postSignup);
 }
