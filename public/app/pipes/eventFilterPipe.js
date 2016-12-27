@@ -26,7 +26,7 @@ var EventFilterPipe = (function () {
 }());
 EventFilterPipe = __decorate([
     core_1.Pipe({
-        name: 'movieFilterPipe'
+        name: 'eventFilterPipe'
     }),
     __metadata("design:paramtypes", [])
 ], EventFilterPipe);

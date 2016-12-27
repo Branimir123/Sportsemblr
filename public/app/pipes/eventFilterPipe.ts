@@ -2,7 +2,7 @@ import { Event } from '../core/models/index';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'movieFilterPipe'
+    name: 'eventFilterPipe'
 })
 
 export class EventFilterPipe implements PipeTransform {

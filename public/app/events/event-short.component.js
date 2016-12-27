@@ -8,28 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var event_service_1 = require("./../core/services/event.service");
 var core_1 = require("@angular/core");
-var EventsListComponent = (function () {
-    function EventsListComponent(service) {
-        this.service = service;
-        this.filterProperty = '';
+var EventShortComponent = (function () {
+    function EventShortComponent() {
     }
-    EventsListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.service.getAllEvents()
-            .subscribe(function (res) {
-            _this.events = res;
-        });
-    };
-    return EventsListComponent;
+    return EventShortComponent;
 }());
-EventsListComponent = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], EventShortComponent.prototype, "event", void 0);
+EventShortComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: 'list-events.component.html'
+        selector: 'event-short',
+        templateUrl: 'event-short.component.html'
     }),
-    __metadata("design:paramtypes", [event_service_1.EventService])
-], EventsListComponent);
-exports.EventsListComponent = EventsListComponent;
-//# sourceMappingURL=list-events.component.js.map
+    __metadata("design:paramtypes", [])
+], EventShortComponent);
+exports.EventShortComponent = EventShortComponent;
+//# sourceMappingURL=event-short.component.js.map

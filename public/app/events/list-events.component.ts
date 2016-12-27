@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsListComponent implements OnInit {
     private events: Event[];
+    private filterProperty: string;
 
-    constructor(private service: EventService) { }
+    constructor(private service: EventService) {
+        this.filterProperty = '';
+    }
 
     ngOnInit() {
         this.service.getAllEvents()
