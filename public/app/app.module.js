@@ -22,6 +22,7 @@ var index_5 = require("./alert/index");
 var index_6 = require("./shared/index");
 var index_7 = require("./core/services/index");
 var index_8 = require("./events/index");
+var index_9 = require("./pipes/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,7 +43,8 @@ AppModule = __decorate([
             index_4.RegisterComponent,
             index_5.AlertComponent,
             index_6.NavigationComponent,
-            index_8.EventsListComponent
+            index_8.EventsListComponent,
+            index_9.EventFilterPipe
         ],
         providers: [
             index_1.AuthGuard,

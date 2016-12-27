@@ -15,6 +15,8 @@ import { NavigationComponent } from './shared/index';
 import { UserService, EventService } from './core/services/index';
 import { EventsListComponent } from './events/index';
 
+import { EventFilterPipe } from './pipes/index';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -29,7 +31,9 @@ import { EventsListComponent } from './events/index';
         RegisterComponent,
         AlertComponent,
         NavigationComponent,
-        EventsListComponent
+        EventsListComponent,
+
+        EventFilterPipe
     ],
     providers: [
         AuthGuard,
