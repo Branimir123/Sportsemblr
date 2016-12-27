@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
+
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
@@ -13,7 +15,7 @@ import { RegisterComponent } from './register/index';
 import { AlertComponent } from './alert/index';
 import { NavigationComponent } from './shared/index';
 import { UserService, EventService } from './core/services/index';
-import { EventsListComponent, EventShortComponent } from './events/index';
+import { EventsListComponent, EventShortComponent, CreateEventComponent } from './events/index';
 
 import { EventFilterPipe } from './pipes/index';
 
@@ -22,7 +24,8 @@ import { EventFilterPipe } from './pipes/index';
         BrowserModule,
         FormsModule,
         HttpModule,
-        routing
+        routing,
+        Ng2DatetimePickerModule
     ],
     declarations: [
         AppComponent,
@@ -33,6 +36,7 @@ import { EventFilterPipe } from './pipes/index';
         NavigationComponent,
         EventsListComponent,
         EventShortComponent,
+        CreateEventComponent,
 
         EventFilterPipe
     ],

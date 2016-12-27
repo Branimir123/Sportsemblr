@@ -29,7 +29,14 @@ module.exports = function (models) {
             });
         },
         createEvent(event) {
-            const ev = new Event(event);
+            const ev = new Event({
+                date: event.date,
+                description: event.description,
+                sport: event.sport,
+                peopleNeeded: event.peopleNeeded,
+                price: event.price,
+                contactPhone: event.contactPhone
+            });
 
             return new Promise((resolve, reject) => {
                 ev.save((err) => {

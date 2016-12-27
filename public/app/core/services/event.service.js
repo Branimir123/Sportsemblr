@@ -14,10 +14,27 @@ require("rxjs/add/operator/map");
 var EventService = (function () {
     function EventService(http) {
         this.http = http;
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     EventService.prototype.getAllEvents = function () {
         return this.http.get('/api/events')
             .map(function (res) { return res.json(); });
+    };
+    EventService.prototype.createEvent = function (description, sport, date, peopleNeeded, price, contactPhone, place) {
+        var body = {
+            sport: sport,
+            date: date.toString(),
+            peopleNeeded: peopleNeeded,
+            price: price,
+            contactPhone: contactPhone,
+            place: place
+        };
+        console.log(body);
+        return this.http.post('/api/events', body, this.headers)
+            .map(function (res) {
+            console.log(res);
+            return res.json();
+        });
     };
     return EventService;
 }());

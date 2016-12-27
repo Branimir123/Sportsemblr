@@ -14,6 +14,9 @@
             <li>
                 <button (click)="events()">Events</button>
             </li>
+            <li *ngIf="hasLoggedUser">
+                <button (click)="create()">Create</button>
+            </li>
         </ul>
     </div>
 </nav>

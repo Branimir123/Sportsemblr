@@ -7,10 +7,40 @@ import { Event } from '../models';
 
 @Injectable()
 export class EventService {
-    constructor(private http: Http) { }
+    private headers: Headers;
+
+    constructor(private http: Http) {
+        this.headers = new Headers({ 'Content-Type': 'application/json' });
+    }
 
     getAllEvents(): Observable<Event[]> {
         return this.http.get('/api/events')
             .map(res => <Event[]>res.json());
+    }
+
+    createEvent(description: String,
+        sport: String,
+        date: Date,
+        peopleNeeded: Number,
+        price: Number,
+        contactPhone: string,
+        place: String) {
+
+        let body = {
+            sport,
+            date: date.toString(),
+            peopleNeeded,
+            price,
+            contactPhone,
+            place
+        }
+
+        console.log(body);
+
+        return this.http.post('/api/events', body, this.headers)
+            .map(res => {
+                console.log(res);
+                return res.json();
+            });
     }
 }

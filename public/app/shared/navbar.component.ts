@@ -29,4 +29,8 @@ export class NavigationComponent {
     events() {
         this.router.navigateByUrl('/events');
     }
+
+    create() {
+        this.router.navigateByUrl('/events/new');
+    }
 }

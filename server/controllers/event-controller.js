@@ -29,9 +29,17 @@ module.exports = function (data) {
                 });
         },
         createEvent(req, res) {
-            data.createEvent(req.body.event)
-                .then()
-                .catch();
+            data.createEvent(req.body)
+                .then(ev => {
+                    req.status(200)
+                        .send(ev);
+                })
+                .catch(err => {
+                    console.log(err);
+                    req
+                        .status(500)
+                        .send(err);
+                });
         },
         getEvents(req, res) {
             data.getAllEvents()

@@ -1,0 +1,55 @@
+<form #eventForm="ngForm" (ngSubmit)="create(); eventForm.reset()">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-7">
+            <div class="form-group">
+                <input class="form-control" type="text" name="sport" [(ngModel)]="sport" #tbName="ngModel" required placeholder="Enter Sport"
+                />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Invalid Sport
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="description" [(ngModel)]="description" #tbName="ngModel" required placeholder="Enter Description"
+                />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Invalid description
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="peopleNeeded" [(ngModel)]="peopleNeeded" #tbName="ngModel" required placeholder="Enter People Needed"
+                />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Need to say how many people are needed
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="price" [(ngModel)]="price" #tbName="ngModel" required placeholder="Enter Price"
+                />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Invalid Price
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="contactPhone" [(ngModel)]="contactPhone" #tbName="ngModel" required placeholder="Enter Phone For Contact"
+                />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Enter phone number
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="place" [(ngModel)]="place" #tbName="ngModel" required placeholder="Enter Place"
+                />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Specify location
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="date" [(ngModel)]="date" ng2-datetime-picker date-format="DD-MM-YYYY hh:mm"
+                    required close-on-select="true" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">Create</button>
+            </div>
+        </div>
+    </div>
+</form>

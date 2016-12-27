@@ -30,7 +30,7 @@ module.exports = (data) => {
       if (req.isAuthenticated()) {
         return next();
       }
-      res.redirect('/login');
+      res.send('No logged in user');
     },
     // Authorization Required middleware.
     isAuthorized: (req, res, next) => {

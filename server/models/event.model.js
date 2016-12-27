@@ -22,7 +22,18 @@ const eventSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    participants: [String]
+    isFinished: {
+        type: Boolean,
+        default: false
+    },
+    contactPhone: {
+        type: String,
+        required: true
+    },
+    place: {
+        type: String,
+        required: true
+    }
 }, {
     timestamps: true
 });

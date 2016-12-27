@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var ng2_datetime_picker_1 = require("ng2-datetime-picker");
 var app_component_1 = require("./app.component");
 var app_routing_1 = require("./app.routing");
 var index_1 = require("./guards/index");
@@ -34,7 +35,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            app_routing_1.routing
+            app_routing_1.routing,
+            ng2_datetime_picker_1.Ng2DatetimePickerModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -45,6 +47,7 @@ AppModule = __decorate([
             index_6.NavigationComponent,
             index_8.EventsListComponent,
             index_8.EventShortComponent,
+            index_8.CreateEventComponent,
             index_9.EventFilterPipe
         ],
         providers: [

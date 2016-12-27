@@ -6,5 +6,5 @@ export class Event {
     date: Date;
     peopleNeeded: Number;
     price: Number;
-    participants: User[];
+    contactPhone: string;
 }

@@ -29,12 +29,6 @@ const controllers = {
     eventController
 };
 
-app.use(passportConfig.passport.initialize());
-app.use(passportConfig.passport.session());
-
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -45,6 +39,12 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+app.use(passportConfig.passport.initialize());
+app.use(passportConfig.passport.session());
+
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(favicon(path.join(__dirname, '../public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/lib', express.static(path.join(__dirname, '../node_modules')));

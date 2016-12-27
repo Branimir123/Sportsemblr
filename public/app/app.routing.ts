@@ -1,3 +1,4 @@
+import { CreateEventComponent } from './events/create-event.component';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/index';
@@ -11,6 +12,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'events', component: EventsListComponent },
+    { path: 'events/new', component: CreateEventComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
