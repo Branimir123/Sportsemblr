@@ -29,6 +29,9 @@ var NavigationComponent = (function () {
     NavigationComponent.prototype.login = function () {
         this.router.navigateByUrl('/login');
     };
+    NavigationComponent.prototype.events = function () {
+        this.router.navigateByUrl('/events');
+    };
     return NavigationComponent;
 }());
 NavigationComponent = __decorate([

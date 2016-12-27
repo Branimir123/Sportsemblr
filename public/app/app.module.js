@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var user_service_1 = require("./core/services/user.service");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
@@ -20,7 +19,9 @@ var index_2 = require("./home/index");
 var index_3 = require("./login/index");
 var index_4 = require("./register/index");
 var index_5 = require("./alert/index");
-var navbar_component_1 = require("./shared/navbar.component");
+var index_6 = require("./shared/index");
+var index_7 = require("./core/services/index");
+var index_8 = require("./events/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,11 +41,13 @@ AppModule = __decorate([
             index_3.LoginComponent,
             index_4.RegisterComponent,
             index_5.AlertComponent,
-            navbar_component_1.NavigationComponent
+            index_6.NavigationComponent,
+            index_8.EventsListComponent
         ],
         providers: [
             index_1.AuthGuard,
-            user_service_1.UserService
+            index_7.UserService,
+            index_7.EventService
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

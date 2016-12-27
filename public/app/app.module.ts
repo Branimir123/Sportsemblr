@@ -1,4 +1,3 @@
-import { UserService } from './core/services/user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +11,9 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AlertComponent } from './alert/index';
-import { NavigationComponent } from './shared/navbar.component';
+import { NavigationComponent } from './shared/index';
+import { UserService, EventService } from './core/services/index';
+import { EventsListComponent } from './events/index';
 
 @NgModule({
     imports: [
@@ -27,11 +28,13 @@ import { NavigationComponent } from './shared/navbar.component';
         LoginComponent,
         RegisterComponent,
         AlertComponent,
-        NavigationComponent
+        NavigationComponent,
+        EventsListComponent
     ],
     providers: [
         AuthGuard,
-        UserService
+        UserService,
+        EventService
     ],
     bootstrap: [AppComponent]
 })

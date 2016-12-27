@@ -25,4 +25,8 @@ export class NavigationComponent {
     login() {
         this.router.navigateByUrl('/login');
     }
+
+    events() {
+        this.router.navigateByUrl('/events');
+    }
 }
