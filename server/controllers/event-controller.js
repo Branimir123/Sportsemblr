@@ -32,6 +32,17 @@ module.exports = function (data) {
             data.createEvent(req.body.event)
                 .then()
                 .catch();
+        },
+        getEvents(req, res) {
+            data.getAllEvents()
+                .then(events => {
+                    res.send(events);
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500)
+                        .send(err);
+                })
         }
     };
 };

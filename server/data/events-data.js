@@ -40,6 +40,17 @@ module.exports = function (models) {
                     resolve(ev);
                 });
             });
+        },
+        getAllEvents() {
+            return new Promise((resolve, reject) => {
+                Event.find({}, (err, events) => {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    resolve(events);
+                });
+            });
         }
     };
 };
