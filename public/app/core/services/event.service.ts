@@ -35,12 +35,7 @@ export class EventService {
             place
         }
 
-        console.log(body);
-
         return this.http.post('/api/events', body, this.headers)
-            .map(res => {
-                console.log(res);
-                return res.json();
-            });
+            .map(res => res.json());
     }
 }

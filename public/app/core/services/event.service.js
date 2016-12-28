@@ -29,12 +29,8 @@ var EventService = (function () {
             contactPhone: contactPhone,
             place: place
         };
-        console.log(body);
         return this.http.post('/api/events', body, this.headers)
-            .map(function (res) {
-            console.log(res);
-            return res.json();
-        });
+            .map(function (res) { return res.json(); });
     };
     return EventService;
 }());

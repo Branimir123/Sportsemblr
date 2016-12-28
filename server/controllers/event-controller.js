@@ -31,14 +31,11 @@ module.exports = function (data) {
         createEvent(req, res) {
             data.createEvent(req.body)
                 .then(ev => {
-                    req.status(200)
-                        .send(ev);
+                    res.send(ev);
                 })
                 .catch(err => {
                     console.log(err);
-                    req
-                        .status(500)
-                        .send(err);
+                    res.send(err);
                 });
         },
         getEvents(req, res) {
@@ -48,8 +45,7 @@ module.exports = function (data) {
                 })
                 .catch(err => {
                     console.log(err);
-                    res.status(500)
-                        .send(err);
+                    res.send(err);
                 })
         }
     };

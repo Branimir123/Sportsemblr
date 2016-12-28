@@ -35,7 +35,8 @@ module.exports = function (models) {
                 sport: event.sport,
                 peopleNeeded: event.peopleNeeded,
                 price: event.price,
-                contactPhone: event.contactPhone
+                contactPhone: event.contactPhone,
+                place: event.place
             });
 
             return new Promise((resolve, reject) => {

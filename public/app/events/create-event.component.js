@@ -10,14 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var index_1 = require("./../core/services/index");
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var CreateEventComponent = (function () {
-    function CreateEventComponent(eventService) {
+    function CreateEventComponent(eventService, router) {
         this.eventService = eventService;
+        this.router = router;
     }
     CreateEventComponent.prototype.create = function () {
+        var _this = this;
         this.eventService.createEvent(this.description, this.sport, this.date, this.peopleNeeded, this.price, this.contactPhone, this.place)
             .subscribe(function (res) {
             console.log(res);
+            var url = "/events/" + res._id;
+            console.log(url);
+            _this.router.navigateByUrl(url);
         });
     };
     return CreateEventComponent;
@@ -27,7 +33,7 @@ CreateEventComponent = __decorate([
         moduleId: module.id,
         templateUrl: './create-event.component.html'
     }),
-    __metadata("design:paramtypes", [index_1.EventService])
+    __metadata("design:paramtypes", [index_1.EventService, router_1.Router])
 ], CreateEventComponent);
 exports.CreateEventComponent = CreateEventComponent;
 //# sourceMappingURL=create-event.component.js.map
