@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     moduleId: module.id,
     selector: 'nav-bar',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
 })
 export class NavigationComponent {
     hasLoggedUser: boolean = localStorage.getItem('currentUser') !== null;

@@ -13,7 +13,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AlertComponent } from './alert/index';
-import { NavigationComponent } from './shared/index';
+import { NavigationComponent, SearchComponent } from './shared/index';
 import { UserService, EventService } from './core/services/index';
 import { EventsListComponent, EventShortComponent, CreateEventComponent } from './events/index';
 
@@ -37,6 +37,7 @@ import { EventFilterPipe } from './pipes/index';
         EventsListComponent,
         EventShortComponent,
         CreateEventComponent,
+        SearchComponent,
 
         EventFilterPipe
     ],
