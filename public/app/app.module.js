@@ -48,6 +48,7 @@ AppModule = __decorate([
             index_8.EventsListComponent,
             index_8.EventShortComponent,
             index_8.CreateEventComponent,
+            index_6.SearchComponent,
             index_9.EventFilterPipe
         ],
         providers: [

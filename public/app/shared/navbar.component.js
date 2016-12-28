@@ -41,7 +41,7 @@ NavigationComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'nav-bar',
-        templateUrl: 'navbar.component.html'
+        templateUrl: 'navbar.component.html',
     }),
     __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
 ], NavigationComponent);
