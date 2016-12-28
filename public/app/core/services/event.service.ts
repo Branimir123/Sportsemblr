@@ -38,4 +38,9 @@ export class EventService {
         return this.http.post('/api/events', body, this.headers)
             .map(res => res.json());
     }
+
+    getEventById(id) {
+        return this.http.get(`/api/events/${id}`)
+            .map(res => res.json());
+    }
 }

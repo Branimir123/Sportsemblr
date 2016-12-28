@@ -5,4 +5,5 @@ function __export(m) {
 __export(require("./list-events.component"));
 __export(require("./event-short.component"));
 __export(require("./create-event.component"));
+__export(require("./event-details.component"));
 //# sourceMappingURL=index.js.map

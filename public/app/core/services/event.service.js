@@ -32,6 +32,10 @@ var EventService = (function () {
         return this.http.post('/api/events', body, this.headers)
             .map(function (res) { return res.json(); });
     };
+    EventService.prototype.getEventById = function (id) {
+        return this.http.get("/api/events/" + id)
+            .map(function (res) { return res.json(); });
+    };
     return EventService;
 }());
 EventService = __decorate([
