@@ -20,9 +20,7 @@ var CreateEventComponent = (function () {
         var _this = this;
         this.eventService.createEvent(this.description, this.sport, this.date, this.peopleNeeded, this.price, this.contactPhone, this.place)
             .subscribe(function (res) {
-            console.log(res);
             var url = "/events/" + res._id;
-            console.log(url);
             _this.router.navigateByUrl(url);
         });
     };

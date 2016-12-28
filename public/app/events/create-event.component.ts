@@ -22,9 +22,7 @@ export class CreateEventComponent {
     create() {
         this.eventService.createEvent(this.description, this.sport, this.date, this.peopleNeeded, this.price, this.contactPhone, this.place)
             .subscribe(res => {
-                console.log(res);
                 let url = `/events/${res._id}`;
-                console.log(url);
                 this.router.navigateByUrl(url);
             });
     }
