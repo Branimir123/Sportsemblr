@@ -17,7 +17,7 @@ import { NavigationComponent, SearchComponent } from './shared/index';
 import { UserService, EventService } from './core/services/index';
 import { EventsListComponent, EventShortComponent, CreateEventComponent, EventDetailsComponent } from './events/index';
 
-import { EventFilterPipe } from './pipes/index';
+import { EventFilterPipe, sportFilterPipe } from './pipes/index';
 
 @NgModule({
     imports: [
@@ -40,7 +40,8 @@ import { EventFilterPipe } from './pipes/index';
         SearchComponent,
         EventDetailsComponent,
 
-        EventFilterPipe
+        EventFilterPipe,
+        sportFilterPipe
     ],
     providers: [
         AuthGuard,
