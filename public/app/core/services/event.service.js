@@ -27,7 +27,8 @@ var EventService = (function () {
             peopleNeeded: peopleNeeded,
             price: price,
             contactPhone: contactPhone,
-            place: place
+            place: place,
+            description: description
         };
         return this.http.post('/api/events', body, this.headers)
             .map(function (res) { return res.json(); });

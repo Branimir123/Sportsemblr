@@ -29,6 +29,7 @@ module.exports = function (models) {
             });
         },
         createEvent(event) {
+            console.log(event);
             const ev = new Event({
                 date: event.date,
                 description: event.description,

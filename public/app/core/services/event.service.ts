@@ -32,7 +32,8 @@ export class EventService {
             peopleNeeded,
             price,
             contactPhone,
-            place
+            place,
+            description
         }
 
         return this.http.post('/api/events', body, this.headers)
