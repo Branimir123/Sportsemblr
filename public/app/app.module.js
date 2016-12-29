@@ -49,6 +49,7 @@ AppModule = __decorate([
             index_8.EventShortComponent,
             index_8.CreateEventComponent,
             index_8.EventDetailsComponent,
+            index_8.EditEventComponent,
             index_9.EventFilterPipe,
             index_9.SportFilterPipe,
             index_9.PlaceFilterPipe

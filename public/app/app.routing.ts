@@ -1,3 +1,4 @@
+import { EditEventComponent } from './events/edit/edit-event.component';
 import { EventDetailsComponent } from './events/event-details.component';
 import { CreateEventComponent } from './events/create-event.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'events', component: EventsListComponent },
     { path: 'events/new', component: CreateEventComponent },
     { path: 'events/:id', component: EventDetailsComponent },
+    { path: 'events/edit/:id', component: EditEventComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: './' }

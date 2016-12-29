@@ -1,4 +1,5 @@
 "use strict";
+var edit_event_component_1 = require("./events/edit/edit-event.component");
 var event_details_component_1 = require("./events/event-details.component");
 var create_event_component_1 = require("./events/create-event.component");
 var router_1 = require("@angular/router");
@@ -12,6 +13,7 @@ var appRoutes = [
     { path: 'events', component: index_3.EventsListComponent },
     { path: 'events/new', component: create_event_component_1.CreateEventComponent },
     { path: 'events/:id', component: event_details_component_1.EventDetailsComponent },
+    { path: 'events/edit/:id', component: edit_event_component_1.EditEventComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: './' }
 ];

@@ -14,8 +14,10 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AlertComponent } from './alert/index';
 import { NavigationComponent } from './shared/index';
+
 import { UserService, EventService } from './core/services/index';
-import { EventsListComponent, EventShortComponent, CreateEventComponent, EventDetailsComponent } from './events/index';
+
+import { EventsListComponent, EventShortComponent, CreateEventComponent, EventDetailsComponent, EditEventComponent } from './events/index';
 
 import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe } from './pipes/index';
 
@@ -38,6 +40,7 @@ import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe } from './pipes/index
         EventShortComponent,
         CreateEventComponent,
         EventDetailsComponent,
+        EditEventComponent,
 
         EventFilterPipe,
         SportFilterPipe,

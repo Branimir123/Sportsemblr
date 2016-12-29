@@ -44,4 +44,9 @@ export class EventService {
         return this.http.get(`/api/events/${id}`)
             .map(res => res.json());
     }
+
+    editEvent(id, event) {
+        return this.http.post(`/api/events/${id}`, event, this.headers)
+            .map(res => res.json());
+    }
 }
