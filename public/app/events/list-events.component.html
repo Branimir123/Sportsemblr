@@ -4,5 +4,5 @@
         <input type="text" class="form-control" placeholder="Sport, Description, Location..." [(ngModel)]="filterProperty" />
      </div>
 </div>
-<event-short class="col-lg-8" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty )" [event]="event">
+<event-short class="col-md-4" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty )" [event]="event">
 </event-short>
