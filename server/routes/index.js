@@ -13,4 +13,10 @@ module.exports = (app, router, passportConfig, controllers) => {
     router.get('/', function (req, res, next) {
         res.sendfile('./public/index.html');
     });
+
+    function redirectRouterLessonUnmatched(req,res) {
+        res.sendFile("./public/index.html", { root: './' });
+    }
+
+    app.use(redirectRouterLessonUnmatched);
 }

@@ -58,6 +58,8 @@ app.use(function (err, req, res, next) {
     console.log(err);
 });
 
+// app.all('*', function (req, res) { res.status(200).sendFile(path.join(__dirname, '/index.html')); });
+
 var routes = require('./routes/index')(app, router, passportConfig, controllers);
 
 module.exports = app;

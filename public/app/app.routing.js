@@ -14,7 +14,7 @@ var appRoutes = [
     { path: 'events/new', component: create_event_component_1.CreateEventComponent },
     { path: 'events/:id', component: event_details_component_1.EventDetailsComponent },
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: './' }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map

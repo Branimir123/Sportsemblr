@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     { path: 'events/:id', component: EventDetailsComponent },
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: './' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
