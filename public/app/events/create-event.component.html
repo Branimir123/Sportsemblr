@@ -2,8 +2,15 @@
     <div class="row">
         <div class="col-xs-offset-1 col-xs-7">
             <div class="form-group">
-                <input class="form-control" type="text" name="sport" [(ngModel)]="sport" #tbName="ngModel" required placeholder="Enter Sport"
-                />
+                <input class="form-control" list="sports" name="sports" [(ngModel)]="sport" #tbName="ngModel">
+                <datalist id="sports">
+                    <option value="Football">
+                    <option value="Volleyball">
+                    <option value="Basketball">
+                    <option value="Soccer">
+                    <option value="Tennis">
+                    <option value="Other">
+                </datalist>
                 <div [hidden]="tbName.untouched || tbName.valid">
                     Invalid Sport
                 </div>
