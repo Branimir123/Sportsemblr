@@ -47,6 +47,18 @@ module.exports = function (data) {
                     console.log(err);
                     res.send(err);
                 })
+        },
+        editEvent(req, res) {
+            const id = req.params.id,
+                otherEvent = req.body;
+
+            data.findEventByIdAndUpdate(id, otherEvent)
+                .then(ev => {
+                    res.send(ev);
+                })
+                .catch(err => res
+                    .status(500)
+                    .send(err));
         }
     };
 };

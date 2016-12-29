@@ -29,7 +29,6 @@ module.exports = function (models) {
             });
         },
         createEvent(event) {
-            console.log(event);
             const ev = new Event({
                 date: event.date,
                 description: event.description,
@@ -58,6 +57,17 @@ module.exports = function (models) {
                     }
 
                     resolve(events);
+                });
+            });
+        },
+        findEventByIdAndUpdate(id, otherEvent) {
+            return new Promise((resolve, reject) => {
+                Event.findEventByIdAndUpdate(id, otherEvent, null, (err, event) => {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    resolve(event);
                 });
             });
         }

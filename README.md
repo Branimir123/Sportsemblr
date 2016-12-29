@@ -7,7 +7,6 @@ Sports assembler
 - Event short details
 - List of events by city or sport
 - Ask to join event
-- Participants posting comments in event
 - Give rating after event has ended - send a form to each participant to rate every other
 
 - Create user profile
