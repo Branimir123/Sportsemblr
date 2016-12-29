@@ -12,15 +12,23 @@ var core_1 = require("@angular/core");
 var EventFilterPipe = (function () {
     function EventFilterPipe() {
     }
-    EventFilterPipe.prototype.transform = function (movies, filter) {
+    EventFilterPipe.prototype.transform = function (events, filter) {
         if (filter) {
-            return movies.filter(function (m) {
-                return m.sport
+            filter = filter.toLocaleLowerCase();
+            return events.filter(function (m) {
+                var result = m.sport
                     .toLocaleLowerCase()
-                    .indexOf(filter) > -1;
+                    .indexOf(filter) > -1 ||
+                    m.description
+                        .toLocaleLowerCase()
+                        .indexOf(filter) > -1 ||
+                    m.place
+                        .toLocaleLowerCase()
+                        .indexOf(filter) > -1;
+                return result;
             });
         }
-        return movies;
+        return events;
     };
     return EventFilterPipe;
 }());

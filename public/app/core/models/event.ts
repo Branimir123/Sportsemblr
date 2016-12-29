@@ -7,4 +7,5 @@ export class Event {
     peopleNeeded: Number;
     price: Number;
     contactPhone: string;
+    place: string;
 }

@@ -6,15 +6,25 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class EventFilterPipe implements PipeTransform {
-    transform(movies: Event[], filter: string): any {
+    transform(events: Event[], filter: string): any {
         if (filter) {
-            return movies.filter(m => {
-                return m.sport
-                    .toLocaleLowerCase()
-                    .indexOf(filter) > -1;
+            filter = filter.toLocaleLowerCase();
+            return events.filter(m => {
+                let result =
+                    m.sport
+                        .toLocaleLowerCase()
+                        .indexOf(filter) > -1 ||
+                    m.description
+                        .toLocaleLowerCase()
+                        .indexOf(filter) > -1 ||
+                    m.place
+                        .toLocaleLowerCase()
+                        .indexOf(filter) > -1;
+
+                return result;
             });
         }
 
-        return movies;
+        return events;
     }
 }
