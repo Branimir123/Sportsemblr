@@ -28,6 +28,7 @@ export class EditEventComponent implements OnInit {
                 this.service.getEventById(this.id)
                     .subscribe(res => {
                         this.model = res;
+                        console.log(this.model);
                     });
             });
     }

@@ -33,6 +33,7 @@ var EditEventComponent = (function () {
             _this.service.getEventById(_this.id)
                 .subscribe(function (res) {
                 _this.model = res;
+                console.log(_this.model);
             });
         });
     };

@@ -21,7 +21,6 @@ var EventDetailsComponent = (function () {
         this.route.params
             .subscribe(function (params) {
             _this.id = params['id'];
-            console.log(_this.id);
             _this.service.getEventById(_this.id)
                 .subscribe(function (res) {
                 _this.model = res;
