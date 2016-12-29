@@ -9,7 +9,7 @@ import { AuthGuard } from './guards/index';
 import { EventsListComponent } from './events/index';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: EventsListComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'events', component: EventsListComponent },

@@ -1,5 +1,8 @@
-<input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterProperty" value="{{filterProperty}}" />
-<div class="row">
-    <event-short class="col-lg-8" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty )" [event]="event">
-    </event-short>
+<div class="banner">
+   	 <div class="container_wrap">
+   		<h1>Feeling sporty? Find a team!</h1>
+        <input type="text" class="form-control" placeholder="Sport, Description, Location..." [(ngModel)]="filterProperty" />
+     </div>
 </div>
+<event-short class="col-lg-8" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty )" [event]="event">
+</event-short>
