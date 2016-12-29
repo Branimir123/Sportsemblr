@@ -4,4 +4,5 @@ function __export(m) {
 }
 __export(require("./eventFilterPipe"));
 __export(require("./sportFIlterPipe"));
+__export(require("./placeFilterPipe"));
 //# sourceMappingURL=index.js.map

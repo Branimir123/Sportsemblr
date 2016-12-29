@@ -9,25 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var SportFilterPipe = (function () {
-    function SportFilterPipe() {
+var PlaceFilterPipe = (function () {
+    function PlaceFilterPipe() {
     }
-    SportFilterPipe.prototype.transform = function (events, filter) {
+    PlaceFilterPipe.prototype.transform = function (events, filter) {
         if (filter) {
             filter = filter.toLocaleLowerCase();
             return events.filter(function (m) {
-                return m.sport.toLocaleLowerCase() === filter;
+                var result = m.place
+                    .toLocaleLowerCase()
+                    .indexOf(filter) > -1;
+                return result;
             });
         }
         return events;
     };
-    return SportFilterPipe;
+    return PlaceFilterPipe;
 }());
-SportFilterPipe = __decorate([
+PlaceFilterPipe = __decorate([
     core_1.Pipe({
-        name: 'sportFilterPipe'
+        name: 'placeFilterPipe'
     }),
     __metadata("design:paramtypes", [])
-], SportFilterPipe);
-exports.SportFilterPipe = SportFilterPipe;
-//# sourceMappingURL=sportFIlterPipe.js.map
+], PlaceFilterPipe);
+exports.PlaceFilterPipe = PlaceFilterPipe;
+//# sourceMappingURL=placeFilterPipe.js.map

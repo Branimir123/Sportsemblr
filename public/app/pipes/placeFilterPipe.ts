@@ -2,15 +2,19 @@ import { Event } from '../core/models/index';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'sportFilterPipe'
+    name: 'placeFilterPipe'
 })
 
-export class SportFilterPipe implements PipeTransform {
+export class PlaceFilterPipe implements PipeTransform {
     transform(events: Event[], filter: string): any {
         if (filter) {
             filter = filter.toLocaleLowerCase();
             return events.filter(m => {
-                return m.sport.toLocaleLowerCase() === filter;
+                let result = m.place
+                    .toLocaleLowerCase()
+                    .indexOf(filter) > -1;
+
+                return result;
             });
         }
 

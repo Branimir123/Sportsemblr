@@ -51,7 +51,8 @@ AppModule = __decorate([
             index_6.SearchComponent,
             index_8.EventDetailsComponent,
             index_9.EventFilterPipe,
-            index_9.sportFilterPipe
+            index_9.SportFilterPipe,
+            index_9.PlaceFilterPipe
         ],
         providers: [
             index_1.AuthGuard,
