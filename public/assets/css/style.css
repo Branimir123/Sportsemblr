@@ -1376,47 +1376,47 @@ ul.icons li{
 ul.icons li i.icon1{
 	width: 110px;
 	height: 110px;
-	background: url(../images/icons.png) no-repeat -14px -134px;
+	background: url(../assets/images/icons.png) no-repeat -14px -134px;
 	display: inline-block;
 }
 ul.icons li i.icon1:hover{
-	background: url(../images/icons.png) no-repeat -14px -12px;
+	background: url(../assets/images/icons.png) no-repeat -14px -12px;
 }
 ul.icons li i.icon2{
 	width: 110px;
 	height: 110px;
-	background: url(../images/icons.png) no-repeat -145px -134px;
+	background: url(../assets/images/icons.png) no-repeat -145px -134px;
 	display: inline-block;
 }
 ul.icons li i.icon2:hover{
-	background: url(../images/icons.png) no-repeat -145px -12px;
+	background: url(../assets/images/icons.png) no-repeat -145px -12px;
 }
 ul.icons li i.icon3{
 	width: 110px;
 	height: 110px;
-	background: url(../images/icons.png) no-repeat -278px -134px;
+	background: url(../assets/images/icons.png) no-repeat -278px -134px;
 	display: inline-block;
 }
 ul.icons li i.icon3:hover{
-	background: url(../images/icons.png) no-repeat -278px -12px;
+	background: url(../assets/images/icons.png) no-repeat -278px -12px;
 }
 ul.icons li i.icon4{
 	width: 110px;
 	height: 110px;
-	background: url(../images/icons.png) no-repeat -409px -134px;
+	background: url(../assets/images/icons.png) no-repeat -409px -134px;
 	display: inline-block;
 }
 ul.icons li i.icon4:hover{
-	background: url(../images/icons.png) no-repeat -409px -12px;
+	background: url(../assets/images/icons.png) no-repeat -409px -12px;
 }
 ul.icons li i.icon5{
 	width: 110px;
 	height: 110px;
-	background: url(../images/icons.png) no-repeat -546px -134px;
+	background: url(../assets/images/icons.png) no-repeat -546px -134px;
 	display: inline-block;
 }
 ul.icons li i.icon5:hover{
-	background: url(../images/icons.png) no-repeat -535px -12px;
+	background: url(../assets/images/icons.png) no-repeat -535px -12px;
 }
 ul.icons li i.icon2{
 	background-position:

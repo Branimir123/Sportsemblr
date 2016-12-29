@@ -4,5 +4,46 @@
         <input type="text" class="form-control" placeholder="Sport, Description, Location..." [(ngModel)]="filterProperty" />
      </div>
 </div>
+ <div class="content_top">
+   	  <div class="container">
+   		<div class="col-md-4 bottom_nav">
+   		   <div class="content_menu">
+				<ul>
+					<li class="active"><a href="#">Recommended</a></li> 
+					<li><a href="#">Latest</a></li> 
+					<li><a href="#">Highlights</a></li> 
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4 content_dropdown1">
+		   <div class="content_dropdown">    
+            			<select>
+							<option selected="dropdown" tabindex="9" style="display:none;color:#eee;">Dubai</option>
+							<option>Australia</option>
+							<option>Sri Lanka</option>
+							<option>Newzeland</option>
+							<option>Pakistan</option>
+							<option>United Kingdom</option>
+							<option>United states</option>
+							<option>Russia</option>
+							<option>Mirum</option>		
+			          </select>
+		      
+		     </div>
+		     <div class="content_dropdown">    
+		      <select>
+            			<option selected="dropdown" tabindex="9" style="display:none;color:#eee;">Show Map</option>	
+						<option>tempor</option>
+						<option>congue</option>
+						<option>mazim </option>
+						<option>mutationem</option>
+						<option>hendrerit </option>
+						<option></option>
+						<option></option>
+		        </select>
+		       </div>
+		</div>
+   	</div>
+   </div>
 <event-short class="col-md-4" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty )" [event]="event">
 </event-short>
