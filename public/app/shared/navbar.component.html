@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Sportsemblr</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li ><a href="#">Home</a></li>
             <li *ngIf="hasLoggedUser">
                 <button (click)="logout()">Logout</button>
             </li>
