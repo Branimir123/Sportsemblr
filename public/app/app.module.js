@@ -19,11 +19,12 @@ var index_1 = require("./guards/index");
 var index_2 = require("./home/index");
 var index_3 = require("./login/index");
 var index_4 = require("./register/index");
-var index_5 = require("./alert/index");
-var index_6 = require("./shared/index");
-var index_7 = require("./core/services/index");
-var index_8 = require("./events/index");
-var index_9 = require("./pipes/index");
+var index_5 = require("./profile/index");
+var index_6 = require("./alert/index");
+var index_7 = require("./shared/index");
+var index_8 = require("./core/services/index");
+var index_9 = require("./events/index");
+var index_10 = require("./pipes/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -43,21 +44,22 @@ AppModule = __decorate([
             index_2.HomeComponent,
             index_3.LoginComponent,
             index_4.RegisterComponent,
-            index_5.AlertComponent,
-            index_6.NavigationComponent,
-            index_8.EventsListComponent,
-            index_8.EventShortComponent,
-            index_8.CreateEventComponent,
-            index_8.EventDetailsComponent,
-            index_8.EditEventComponent,
-            index_9.EventFilterPipe,
-            index_9.SportFilterPipe,
-            index_9.PlaceFilterPipe
+            index_5.ProfileComponent,
+            index_6.AlertComponent,
+            index_7.NavigationComponent,
+            index_9.EventsListComponent,
+            index_9.EventShortComponent,
+            index_9.CreateEventComponent,
+            index_9.EventDetailsComponent,
+            index_9.EditEventComponent,
+            index_10.EventFilterPipe,
+            index_10.SportFilterPipe,
+            index_10.PlaceFilterPipe
         ],
         providers: [
             index_1.AuthGuard,
-            index_7.UserService,
-            index_7.EventService
+            index_8.UserService,
+            index_8.EventService
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

@@ -12,6 +12,7 @@ import { AuthGuard } from './guards/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import { ProfileComponent } from './profile/index';
 import { AlertComponent } from './alert/index';
 import { NavigationComponent } from './shared/index';
 
@@ -34,6 +35,7 @@ import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe } from './pipes/index
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+        ProfileComponent,
         AlertComponent,
         NavigationComponent,
         EventsListComponent,
