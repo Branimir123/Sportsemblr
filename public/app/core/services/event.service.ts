@@ -18,6 +18,11 @@ export class EventService {
             .map(res => <Event[]>res.json());
     }
 
+    getNotFinishedEvents(): Observable<Event[]> {
+        return this.http.get('/api/ongoingevents')
+            .map(res => <Event[]>res.json());
+    }
+
     createEvent(description: String,
         sport: String,
         date: Date,

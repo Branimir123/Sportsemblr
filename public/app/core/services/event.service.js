@@ -20,6 +20,10 @@ var EventService = (function () {
         return this.http.get('/api/events')
             .map(function (res) { return res.json(); });
     };
+    EventService.prototype.getNotFinishedEvents = function () {
+        return this.http.get('/api/ongoingevents')
+            .map(function (res) { return res.json(); });
+    };
     EventService.prototype.createEvent = function (description, sport, date, peopleNeeded, price, contactPhone, place) {
         var body = {
             sport: sport,

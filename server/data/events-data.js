@@ -71,6 +71,19 @@ module.exports = function (models) {
                     resolve(event);
                 });
             });
+        },
+        getOngoingEvents() {
+            return new Promise((resolve, reject) => {
+                Event.find({
+                    isFinished: false
+                }, (err, events) => {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    resolve(events);
+                });
+            });
         }
     };
 };

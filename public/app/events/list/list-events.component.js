@@ -17,7 +17,7 @@ var EventsListComponent = (function () {
     }
     EventsListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.service.getAllEvents()
+        this.service.getNotFinishedEvents()
             .subscribe(function (res) {
             _this.events = res;
             _this.getSports();

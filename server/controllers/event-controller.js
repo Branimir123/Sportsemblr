@@ -59,6 +59,16 @@ module.exports = function (data) {
                 .catch(err => res
                     .status(500)
                     .send(err));
+        },
+        getOngoingEvents(req, res) {
+            data.getOngoingEvents()
+                .then(events => {
+                    res.send(events);
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.send(err);
+                })
         }
     };
 };

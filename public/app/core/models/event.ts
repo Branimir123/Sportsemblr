@@ -7,4 +7,5 @@ export class Event {
     contactPhone: string;
     place: string;
     creator: string;
+    isFinished: boolean;
 }

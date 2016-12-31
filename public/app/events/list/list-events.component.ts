@@ -20,7 +20,7 @@ export class EventsListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.service.getAllEvents()
+        this.service.getNotFinishedEvents()
             .subscribe(res => {
                 this.events = res;
 
