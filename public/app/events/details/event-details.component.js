@@ -9,12 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var router_1 = require("@angular/router");
+var event_1 = require("../../core/models/event");
 var event_service_1 = require("../../core/services/event.service");
 var core_1 = require("@angular/core");
 var EventDetailsComponent = (function () {
     function EventDetailsComponent(service, route) {
         this.service = service;
         this.route = route;
+        this.event = this.event || new event_1.Event();
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -23,7 +25,8 @@ var EventDetailsComponent = (function () {
             _this.id = params['id'];
             _this.service.getEventById(_this.id)
                 .subscribe(function (res) {
-                _this.model = res;
+                _this.event = res;
+                console.log(_this.event);
             });
         });
     };

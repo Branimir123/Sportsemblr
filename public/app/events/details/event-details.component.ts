@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './event-details.component.html'
 })
 export class EventDetailsComponent implements OnInit {
-    private model: Event;
+    private event: Event;
     private id;
 
-    constructor(private service: EventService, private route: ActivatedRoute) { }
+    constructor(private service: EventService, private route: ActivatedRoute) {
+        this.event =this.event || new Event();
+     }
 
     ngOnInit() {
         this.route.params
@@ -20,7 +22,8 @@ export class EventDetailsComponent implements OnInit {
 
                 this.service.getEventById(this.id)
                     .subscribe(res => {
-                        this.model = res;
+                        this.event = res;
+                        console.log(this.event)
                     });
             });
     }
