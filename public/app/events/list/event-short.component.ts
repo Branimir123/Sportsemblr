@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Event } from '../core/models/index';
+import { Event } from '../../core/models/index';
 
 
 @Component({

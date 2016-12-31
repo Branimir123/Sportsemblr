@@ -1,6 +1,4 @@
-import { EditEventComponent } from './events/edit/edit-event.component';
-import { EventDetailsComponent } from './events/event-details.component';
-import { CreateEventComponent } from './events/create-event.component';
+import { EditEventComponent, CreateEventComponent, EventDetailsComponent } from './events/index'
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/index';

@@ -1,5 +1,5 @@
-import { Event } from './../core/models/event';
-import { EventService } from './../core/services/index';
+import { Event } from '../../core/models/event';
+import { EventService } from '../../core/services/index';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 

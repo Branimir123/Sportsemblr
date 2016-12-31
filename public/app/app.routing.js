@@ -1,21 +1,19 @@
 "use strict";
-var edit_event_component_1 = require("./events/edit/edit-event.component");
-var event_details_component_1 = require("./events/event-details.component");
-var create_event_component_1 = require("./events/create-event.component");
+var index_1 = require("./events/index");
 var router_1 = require("@angular/router");
-var index_1 = require("./login/index");
-var index_2 = require("./register/index");
-var index_3 = require("./profile/index");
-var index_4 = require("./events/index");
+var index_2 = require("./login/index");
+var index_3 = require("./register/index");
+var index_4 = require("./profile/index");
+var index_5 = require("./events/index");
 var appRoutes = [
-    { path: '', component: index_4.EventsListComponent },
-    { path: 'login', component: index_1.LoginComponent },
-    { path: 'register', component: index_2.RegisterComponent },
-    { path: 'profile', component: index_3.ProfileComponent },
-    { path: 'events', component: index_4.EventsListComponent },
-    { path: 'events/new', component: create_event_component_1.CreateEventComponent },
-    { path: 'events/:id', component: event_details_component_1.EventDetailsComponent },
-    { path: 'events/edit/:id', component: edit_event_component_1.EditEventComponent },
+    { path: '', component: index_5.EventsListComponent },
+    { path: 'login', component: index_2.LoginComponent },
+    { path: 'register', component: index_3.RegisterComponent },
+    { path: 'profile', component: index_4.ProfileComponent },
+    { path: 'events', component: index_5.EventsListComponent },
+    { path: 'events/new', component: index_1.CreateEventComponent },
+    { path: 'events/:id', component: index_1.EventDetailsComponent },
+    { path: 'events/edit/:id', component: index_1.EditEventComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: './' }
 ];
