@@ -26,7 +26,7 @@ var EventDetailsComponent = (function () {
             _this.service.getEventById(_this.id)
                 .subscribe(function (res) {
                 _this.event = res;
-                console.log(_this.event);
+                _this.isCurrentUserAuthor = JSON.parse(localStorage.getItem('currentUser')).username == _this.event.creator;
             });
         });
     };

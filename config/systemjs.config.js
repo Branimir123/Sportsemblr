@@ -27,7 +27,7 @@
     'angular2-in-memory-web-api': {
       main: 'index.js',
       defaultExtension: 'js'
-    },
+    }
   };
   var ngPackageNames = [
     'common',
@@ -39,7 +39,7 @@
     'platform-browser-dynamic',
     'router',
     'router-deprecated',
-    'upgrade',
+    'upgrade'
   ];
   // Individual files (~300 requests):
   function packIndex(pkgName) {

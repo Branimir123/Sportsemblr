@@ -10,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class EventDetailsComponent implements OnInit {
     private event: Event;
     private id;
+    private isCurrentUserAuthor: boolean;
 
     constructor(private service: EventService, private route: ActivatedRoute) {
-        this.event =this.event || new Event();
-     }
+        this.event = this.event || new Event();
+    }
 
     ngOnInit() {
         this.route.params
@@ -23,7 +24,7 @@ export class EventDetailsComponent implements OnInit {
                 this.service.getEventById(this.id)
                     .subscribe(res => {
                         this.event = res;
-                        console.log(this.event)
+                        this.isCurrentUserAuthor = JSON.parse(localStorage.getItem('currentUser')).username == this.event.creator;
                     });
             });
     }

@@ -11,6 +11,12 @@ module.exports = function (models) {
                         reject(err);
                     }
 
+                    let currentDate = new Date();
+                    if (ev.date < currentDate) {
+                        ev.isFinished = true;
+                        ev.save();
+                    }
+
                     resolve(ev);
                 })
             });
