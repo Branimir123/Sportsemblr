@@ -28,7 +28,7 @@ module.exports = function (models) {
                 });
             });
         },
-        createEvent(event) {
+        createEvent(event, user) {
             const ev = new Event({
                 date: event.date,
                 description: event.description,
@@ -36,7 +36,8 @@ module.exports = function (models) {
                 peopleNeeded: event.peopleNeeded,
                 price: event.price,
                 contactPhone: event.contactPhone,
-                place: event.place
+                place: event.place,
+                creator: user.username
             });
 
             return new Promise((resolve, reject) => {

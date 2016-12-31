@@ -1,5 +1,3 @@
-import { User } from './user';
-
 export class Event {
     description: String;
     sport: String;
@@ -8,4 +6,5 @@ export class Event {
     price: Number;
     contactPhone: string;
     place: string;
+    creator: string;
 }

@@ -29,7 +29,7 @@ module.exports = function (data) {
                 });
         },
         createEvent(req, res) {
-            data.createEvent(req.body)
+            data.createEvent(req.body, req.user)
                 .then(ev => {
                     res.send(ev);
                 })
