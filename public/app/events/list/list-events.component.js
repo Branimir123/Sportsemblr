@@ -20,6 +20,28 @@ var EventsListComponent = (function () {
         this.service.getAllEvents()
             .subscribe(function (res) {
             _this.events = res;
+            _this.getSports();
+            _this.getPlaces();
+        });
+    };
+    EventsListComponent.prototype.getSports = function () {
+        var _this = this;
+        this.sports = [''];
+        this.events.forEach(function (e) {
+            var sport = e.sport.toLocaleUpperCase();
+            if (_this.sports.indexOf(sport) < 0) {
+                _this.sports.push(sport);
+            }
+        });
+    };
+    EventsListComponent.prototype.getPlaces = function () {
+        var _this = this;
+        this.places = [''];
+        this.events.forEach(function (e) {
+            var place = e.place.toLocaleUpperCase();
+            if (_this.places.indexOf(place) < 0) {
+                _this.places.push(place);
+            }
         });
     };
     return EventsListComponent;
