@@ -958,6 +958,27 @@ ul.filter li a i.icon5{
 .view:hover .sale{
 	display:none;
 }
+
+.time {
+	font-size: 14px;
+	font-weight: 500;
+	color: #fff;
+	background-color: #0000fa;
+	line-height: 23px;
+	padding: 3px 14px;
+	position: absolute;
+	top: 7px;
+	left: 20px;
+	text-transform: uppercase;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+}
+.view:hover .time{
+	display:none;
+}
+
 i.home{
 	width: 67px;
 	height: 67px;

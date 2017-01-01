@@ -29,6 +29,6 @@
 		</div>
 	</div>
 </div>
-<event-short class="col-md-4" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty | placeFilterPipe:placeFilterProperty | sportFilterPipe:sportFilterProperty )"
+<event-short class="col-md-3" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty | placeFilterPipe:placeFilterProperty | sportFilterPipe:sportFilterProperty )"
 				[event]="event">
 </event-short>

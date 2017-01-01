@@ -1,14 +1,14 @@
 <a [routerLink]="['/events', event._id]">
   <div class="col-md-12">
-    <div class="grid1">
       <div class="view view-first">
-        <div class="index_img"><img src="./assets/images/{{event.sport}}.jpg" class="img-responsive" alt="" /></div>
+        <img src="./assets/images/{{event.sport}}.jpg" class="img-responsive" alt="" />
         <div class="sale">{{event.price}}$</div>
+        <div class="time">{{event.date | date:"short"}}</div>
         <div class="inner_wrap">
-          <p>{{event.sport}}</p>
+          <p>Type of sport: {{event.sport}}</p>
+          <p>Location: {{event.place}} </p>
           <h2>{{event.description}}</h2>
         </div>
       </div>
-    </div>
   </div>
 </a>
