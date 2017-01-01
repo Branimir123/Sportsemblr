@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class EventDetailsComponent implements OnInit {
     private event: Event;
     private id;
-    private isCurrentUserAuthor: boolean;
+    private currentUser: string;
+    private userCanVote: boolean;
 
     constructor(private service: EventService, private route: ActivatedRoute) {
         this.event = this.event || new Event();
@@ -24,7 +25,8 @@ export class EventDetailsComponent implements OnInit {
                 this.service.getEventById(this.id)
                     .subscribe(res => {
                         this.event = res;
-                        this.isCurrentUserAuthor = JSON.parse(localStorage.getItem('currentUser')).username == this.event.creator;
+                        this.currentUser = JSON.parse(localStorage.getItem('currentUser')).username;
+                        this.userCanVote = this.event.participants.map(p => p.username).indexOf(this.currentUser) > -1;
                     });
             });
     }

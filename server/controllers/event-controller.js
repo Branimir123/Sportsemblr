@@ -71,6 +71,9 @@ module.exports = function (data) {
                     console.log(err);
                     res.send(err);
                 })
+        },
+        ratePlayers(req, res) {
+
         }
     };
 };

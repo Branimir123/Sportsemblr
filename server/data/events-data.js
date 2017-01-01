@@ -46,6 +46,11 @@ module.exports = function (models) {
                 creator: user.username
             });
 
+            ev.participants = [];
+            ev.participants.push({
+                username: ev.creator
+            });
+
             return new Promise((resolve, reject) => {
                 ev.save((err) => {
                     if (err) {

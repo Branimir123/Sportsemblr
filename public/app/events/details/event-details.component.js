@@ -26,7 +26,8 @@ var EventDetailsComponent = (function () {
             _this.service.getEventById(_this.id)
                 .subscribe(function (res) {
                 _this.event = res;
-                _this.isCurrentUserAuthor = JSON.parse(localStorage.getItem('currentUser')).username == _this.event.creator;
+                _this.currentUser = JSON.parse(localStorage.getItem('currentUser')).username;
+                _this.userCanVote = _this.event.participants.map(function (p) { return p.username; }).indexOf(_this.currentUser) > -1;
             });
         });
     };

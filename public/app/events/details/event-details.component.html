@@ -1,7 +1,7 @@
 <div class="item col-xs-8 col-lg-8">
     <div class="thumbnail">
         <img src="./assets/images/{{event.sport}}.jpg" alt="No picture">
-        <span *ngIf="this.isCurrentUserAuthor">
+        <span *ngIf="this.currentUser === event.creator">
                         <a [routerLink]="['/events/edit', id]" href="" class="pull-right glyphicon glyphicon-edit big" ></a>
         </span>
         <div class="caption">
@@ -32,4 +32,5 @@
             </p>
         </div>
     </div>
+    <player-rating *ngIf="userCanVote" class="col-md-4" [players]="event.participants"> </player-rating>
 </div>

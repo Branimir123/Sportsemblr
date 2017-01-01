@@ -37,7 +37,14 @@ const eventSchema = new mongoose.Schema({
     creator: {
         type: String,
         required: true
-    }
+    },
+    participants: [{
+        username: String,
+        rating: {
+            type: Number,
+            default: 0
+        }
+    }]
 }, {
     timestamps: true
 });

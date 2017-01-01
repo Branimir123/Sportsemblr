@@ -1,3 +1,5 @@
+import { PlayerRating } from './player-rating';
+
 export class Event {
     description: String;
     sport: String;
@@ -8,4 +10,5 @@ export class Event {
     place: string;
     creator: string;
     isFinished: boolean;
+    participants: PlayerRating[];
 }

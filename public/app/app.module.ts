@@ -1,3 +1,4 @@
+import { PlayerRatingComponent } from './rating/player-rating.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +22,7 @@ import { UserService, EventService } from './core/services/index';
 import { EventsListComponent, EventShortComponent, CreateEventComponent, EventDetailsComponent, EditEventComponent } from './events/index';
 
 import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe } from './pipes/index';
+import { RatingService } from './core/services/rating.service';
 
 @NgModule({
     imports: [
@@ -44,6 +46,7 @@ import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe } from './pipes/index
         EventDetailsComponent,
         EditEventComponent,
         FooterComponent,
+        PlayerRatingComponent,
 
         EventFilterPipe,
         SportFilterPipe,
@@ -52,7 +55,8 @@ import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe } from './pipes/index
     providers: [
         AuthGuard,
         UserService,
-        EventService
+        EventService,
+        RatingService
     ],
     bootstrap: [AppComponent]
 })

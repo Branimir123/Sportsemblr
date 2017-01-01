@@ -1,0 +1,20 @@
+<form #eventForm="ngForm" (ngSubmit)="ratePlayers(); eventForm.reset()">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-7">
+            <div *ngFor="let player of players" class="form-group">
+                <span *ngIf="player.username !== currentLoggedUser"> 
+            {{player.username}}
+             <input class="form-control" type="number"
+            name="description" [(ngModel)]="player.rating" #tbName="ngModel" required placeholder="Enter Rating" min="1" max="10" #tbName="ngModel"
+        />
+                <div [hidden]="tbName.untouched || tbName.valid">
+                    Invalid description
+                </div>
+            </span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">Rate</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var player_rating_component_1 = require("./rating/player-rating.component");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
@@ -25,6 +26,7 @@ var index_7 = require("./shared/index");
 var index_8 = require("./core/services/index");
 var index_9 = require("./events/index");
 var index_10 = require("./pipes/index");
+var rating_service_1 = require("./core/services/rating.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -53,6 +55,7 @@ AppModule = __decorate([
             index_9.EventDetailsComponent,
             index_9.EditEventComponent,
             index_7.FooterComponent,
+            player_rating_component_1.PlayerRatingComponent,
             index_10.EventFilterPipe,
             index_10.SportFilterPipe,
             index_10.PlaceFilterPipe
@@ -60,7 +63,8 @@ AppModule = __decorate([
         providers: [
             index_1.AuthGuard,
             index_8.UserService,
-            index_8.EventService
+            index_8.EventService,
+            rating_service_1.RatingService
         ],
         bootstrap: [app_component_1.AppComponent]
     }),
