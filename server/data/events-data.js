@@ -68,8 +68,9 @@ module.exports = function (models) {
             });
         },
         findEventByIdAndUpdate(id, otherEvent) {
+            console.log(otherEvent);
             return new Promise((resolve, reject) => {
-                Event.findEventByIdAndUpdate(id, otherEvent, null, (err, event) => {
+                Event.findByIdAndUpdate(id, otherEvent, null, (err, event) => {
                     if (err) {
                         reject(err);
                     }

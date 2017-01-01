@@ -11,7 +11,9 @@ export class EditEventComponent implements OnInit {
     private model: Event;
     private id;
 
-    constructor(private service: EventService, private route: ActivatedRoute, private router: Router) { }
+    constructor(private service: EventService, private route: ActivatedRoute, private router: Router) {
+        this.model = this.model || new Event();
+    }
 
     editEvent() {
         this.service.editEvent(this.id, this.model)
@@ -28,7 +30,6 @@ export class EditEventComponent implements OnInit {
                 this.service.getEventById(this.id)
                     .subscribe(res => {
                         this.model = res;
-                        console.log(this.model);
                     });
             });
     }

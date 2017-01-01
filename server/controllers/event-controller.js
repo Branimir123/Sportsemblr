@@ -56,9 +56,11 @@ module.exports = function (data) {
                 .then(ev => {
                     res.send(ev);
                 })
-                .catch(err => res
-                    .status(500)
-                    .send(err));
+                .catch(err => {
+                    console.log(err);
+
+                    res.send(err)
+                });
         },
         getOngoingEvents(req, res) {
             data.getOngoingEvents()

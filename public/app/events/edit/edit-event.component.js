@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var router_1 = require("@angular/router");
+var event_1 = require("../../core/models/event");
 var event_service_1 = require("../../core/services/event.service");
 var core_1 = require("@angular/core");
 var EditEventComponent = (function () {
@@ -16,6 +17,7 @@ var EditEventComponent = (function () {
         this.service = service;
         this.route = route;
         this.router = router;
+        this.model = this.model || new event_1.Event();
     }
     EditEventComponent.prototype.editEvent = function () {
         var _this = this;
@@ -33,7 +35,6 @@ var EditEventComponent = (function () {
             _this.service.getEventById(_this.id)
                 .subscribe(function (res) {
                 _this.model = res;
-                console.log(_this.model);
             });
         });
     };
