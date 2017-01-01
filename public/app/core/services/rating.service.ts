@@ -11,7 +11,7 @@ export class RatingService {
         this.headers = new Headers({ 'Content-Type': 'application/json' });
     }
 
-    ratePlayers(players: string[], currentLoggedUser: string) {
-        return this.http.post('/api/rating', { players, user: currentLoggedUser }, this.headers);
+    ratePlayers(players: string[], currentLoggedUser: string, sport: string) {
+        return this.http.post('/api/rating', { players, user: currentLoggedUser, sport }, this.headers);
     }
 }

@@ -1,6 +1,7 @@
 module.exports = function (models) {
     const {
-        Event
+        Event,
+        User
     } = models;
 
     return {
@@ -95,6 +96,52 @@ module.exports = function (models) {
 
                     resolve(events);
                 });
+            });
+        },
+        ratePlayers(players, user, sport) {
+            return new Promise((resolve, reject) => {
+                players.forEach(function (player) {
+                    User.find({
+                        username: player.username
+                    }, (err, user) => {
+                        if (err) {
+                            reject(err);
+                        }
+                        if (user) {
+                            console.log(user);
+                            user = user[0];
+
+                            if (user.plays) {
+                                let plays = user.plays.find(p => p.sport === sport);
+                                if (plays) {
+                                    plays = plays[0];
+
+                                    plays.rating = (plays.rating * plays.count + player.rating) / (plays.count + 1);
+                                } else {
+                                    let play = {
+                                        rating: player.rating,
+                                        count: 1,
+                                        sport: sport
+                                    }
+
+                                    user.plays.push(play);
+                                }
+                            } else {
+                                let play = {
+                                    rating: player.rating,
+                                    count: 1,
+                                    sport: sport
+                                }
+
+                                user.plays = [play];
+                            }
+
+                            user.save(err => {
+                                console.log(err);
+                            });
+                        }
+                    });
+                }, this);
             });
         }
     };

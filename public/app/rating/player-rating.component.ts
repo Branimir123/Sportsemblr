@@ -9,6 +9,7 @@ import { RatingService } from '../core/services/rating.service';
 })
 export class PlayerRatingComponent {
     @Input() players: string[] = [];
+    @Input() sport: string;
     private playersWithRating: PlayerRating[];
     private currentLoggedUser = JSON.parse(localStorage.getItem('currentUser')).username;
 
@@ -16,7 +17,7 @@ export class PlayerRatingComponent {
     }
 
     private ratePlayers() {
-        this.service.ratePlayers(this.players, this.currentLoggedUser)
+        this.service.ratePlayers(this.players, this.currentLoggedUser, this.sport)
             .subscribe(res => {
                 console.log(res);
             });

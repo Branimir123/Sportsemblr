@@ -73,7 +73,14 @@ module.exports = function (data) {
                 })
         },
         ratePlayers(req, res) {
-
+            data.ratePlayers(req.body.players, req.body.user, req.body.sport)
+                .then(res => {
+                    res.send(res);
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).send(err);
+                })
         }
     };
 };

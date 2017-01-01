@@ -27,7 +27,18 @@ const userSchema = new mongoose.Schema({
     }],
 
     userDescription: String,
-    name: String
+    name: String,
+    plays: [{
+        sport: String,
+        rating: {
+            type: Number,
+            default: 0
+        },
+        count: {
+            type: Number,
+            default: 0
+        }
+    }]
 }, {
     timestamps: true
 });

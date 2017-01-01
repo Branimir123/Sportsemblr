@@ -16,8 +16,8 @@ var RatingService = (function () {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
-    RatingService.prototype.ratePlayers = function (players, currentLoggedUser) {
-        return this.http.post('/api/rating', { players: players, user: currentLoggedUser }, this.headers);
+    RatingService.prototype.ratePlayers = function (players, currentLoggedUser, sport) {
+        return this.http.post('/api/rating', { players: players, user: currentLoggedUser, sport: sport }, this.headers);
     };
     return RatingService;
 }());

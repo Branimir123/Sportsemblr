@@ -17,7 +17,7 @@ var PlayerRatingComponent = (function () {
         this.currentLoggedUser = JSON.parse(localStorage.getItem('currentUser')).username;
     }
     PlayerRatingComponent.prototype.ratePlayers = function () {
-        this.service.ratePlayers(this.players, this.currentLoggedUser)
+        this.service.ratePlayers(this.players, this.currentLoggedUser, this.sport)
             .subscribe(function (res) {
             console.log(res);
         });
@@ -28,6 +28,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], PlayerRatingComponent.prototype, "players", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], PlayerRatingComponent.prototype, "sport", void 0);
 PlayerRatingComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

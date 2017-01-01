@@ -76,6 +76,8 @@ module.exports = function (models) {
                 name
             });
 
+            user.plays = [];
+
             return new Promise((resolve, reject) => {
                 user.save((err) => {
                     if (err) {
