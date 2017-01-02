@@ -11,4 +11,5 @@ export class Event {
     creator: string;
     isFinished: boolean;
     participants: PlayerRating[];
+    sentRequests: any[];
 }

@@ -152,19 +152,22 @@ module.exports = function (models) {
                         reject(err);
                     }
 
-                    if (user.requests.find(r => {
-                            r.eventId === id && r.user === user.username
-                        }).length === 0) {
+                    let request = user.requests.find(r => {
+                        r.eventId === id && r.user === user.username
+                    });
 
+                    if (!request) {
                         user.requests.push({
                             user: user.username,
                             eventId: id
                         });
-
-                        user.save(err => {
-                            reject(err);
-                        });
+                    } else {
+                        user.requests.remove(user.requests.indexOf(request));
                     }
+
+                    user.save(err => {
+                        reject(err);
+                    });
 
                     resolve();
                 });

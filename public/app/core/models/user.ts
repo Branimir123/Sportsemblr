@@ -4,4 +4,5 @@
     name: string;
     description: string;
     email: string;
+    requests: any[]
 }
