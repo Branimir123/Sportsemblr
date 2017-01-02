@@ -162,7 +162,7 @@ module.exports = function (models) {
                             eventId: id
                         });
                     } else {
-                        user.requests.remove(user.requests.indexOf(request));
+                        user.requests.splice(user.requests.indexOf(request), 1);
                     }
 
                     user.save(err => {

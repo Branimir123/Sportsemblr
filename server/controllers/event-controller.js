@@ -91,7 +91,7 @@ module.exports = function (data) {
                             user: req.user.username
                         });
                     } else {
-                        event.sentRequests.remove(event.sentRequests.indexOf(request));
+                        event.sentRequests.splice(event.sentRequests.indexOf(request), 1);
                     }
 
                     event.save(err => {
