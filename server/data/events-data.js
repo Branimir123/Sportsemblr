@@ -144,28 +144,32 @@ module.exports = function (models) {
             });
         },
         sendRequestToJoin(id, user, author) {
+            console.log(author);
+            console.log(user);
             return new Promise((resolve, reject) => {
                 User.findOne({
                     username: author
-                }, (err, user) => {
+                }, (err, eventAuthor) => {
                     if (err) {
                         reject(err);
                     }
 
-                    let request = user.requests.find(r => {
-                        r.eventId === id && r.user === user.username
+                    console.log(eventAuthor);
+
+                    let request = eventAuthor.requests.find(r => {
+                        r.eventId === id && r.user === user
                     });
 
                     if (!request) {
-                        user.requests.push({
-                            user: user.username,
+                        eventAuthor.requests.push({
+                            user: user,
                             eventId: id
                         });
                     } else {
-                        user.requests.splice(user.requests.indexOf(request), 1);
+                        eventAuthor.requests.splice(eventAuthor.requests.indexOf(request), 1);
                     }
 
-                    user.save(err => {
+                    eventAuthor.save(err => {
                         reject(err);
                     });
 
