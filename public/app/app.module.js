@@ -21,6 +21,7 @@ var index_2 = require("./home/index");
 var index_3 = require("./login/index");
 var index_4 = require("./register/index");
 var index_5 = require("./profile/index");
+// import { UsersComponent } from './users/index';
 var index_6 = require("./alert/index");
 var index_7 = require("./shared/index");
 var index_8 = require("./core/services/index");
@@ -47,6 +48,7 @@ AppModule = __decorate([
             index_3.LoginComponent,
             index_4.RegisterComponent,
             index_5.ProfileComponent,
+            // UsersComponent,
             index_6.AlertComponent,
             index_7.NavigationComponent,
             index_9.EventsListComponent,
@@ -58,7 +60,8 @@ AppModule = __decorate([
             player_rating_component_1.PlayerRatingComponent,
             index_10.EventFilterPipe,
             index_10.SportFilterPipe,
-            index_10.PlaceFilterPipe
+            index_10.PlaceFilterPipe,
+            index_10.RemainingTimePipe
         ],
         providers: [
             index_1.AuthGuard,

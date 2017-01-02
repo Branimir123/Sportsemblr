@@ -5,4 +5,5 @@ function __export(m) {
 __export(require("./eventFilterPipe"));
 __export(require("./sportFIlterPipe"));
 __export(require("./placeFilterPipe"));
+__export(require("./remainingTimePipe"));
 //# sourceMappingURL=index.js.map
