@@ -1,0 +1,7 @@
+<a *ngFor="let user of users" [routerLink]="['/users', user.username]">
+    <div class="col-md-12">
+        <div class="view view-first">
+            {{user.username}}
+        </div>
+    </div>
+</a>

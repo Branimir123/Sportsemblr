@@ -19,7 +19,6 @@ var UsersListComponent = (function () {
         this.userService.getUsers()
             .subscribe(function (res) {
             _this.users = res;
-            console.log(_this.users);
         });
     };
     return UsersListComponent;
@@ -27,7 +26,7 @@ var UsersListComponent = (function () {
 UsersListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: 'users-events.component.html'
+        templateUrl: 'users-list.component.html'
     }),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], UsersListComponent);

@@ -4,7 +4,7 @@ import { UserService } from '../../core/services/user.service';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'users-events.component.html'
+    templateUrl: 'users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
     private users: User[];
@@ -15,7 +15,6 @@ export class UsersListComponent implements OnInit {
         this.userService.getUsers()
             .subscribe(res => {
                 this.users = res;
-                console.log(this.users);
             });
     }
 }
