@@ -90,20 +90,22 @@ module.exports = function (data) {
                         event.sentRequests.push({
                             user: req.user.username
                         });
-                    } else {
-                        event.sentRequests.splice(event.sentRequests.indexOf(request), 1);
+
+                        event.save(err => {
+                            if (err) {
+                                return res.status(500).send(err);
+                            }
+                        })
+
+                        return data.sendRequestToJoin(req.params.id, req.user.username, event.creator);
                     }
 
-                    event.save(err => {
-                        if (err) {
-                            return res.status(500).send(err);
-                        }
-                    })
-
-                    return data.sendRequestToJoin(req.params.id, req.user.username, event.creator)
+                    return res.send({
+                        message: 'User already joined'
+                    });
                 })
                 .then(response => {
-                    return res.status(200);
+                    return res.status(200).send(response);
                 })
                 .catch(err => {
                     console.log(err);

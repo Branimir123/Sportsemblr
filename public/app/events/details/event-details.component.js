@@ -28,22 +28,15 @@ var EventDetailsComponent = (function () {
                 _this.event = res;
                 _this.currentUser = JSON.parse(localStorage.getItem('currentUser')).username;
                 _this.userCanVote = _this.event.participants.map(function (p) { return p.username; }).indexOf(_this.currentUser) > -1;
-                _this.userCanJoin = !_this.event.sentRequests.find(function (r) { return r.user === _this.currentUser; });
+                console.log(!_this.event.sentRequests.find(function (r) { return r.user === _this.currentUser; }));
+                console.log(!!_this.event.participants.find(function (p) { return p.username === _this.currentUser; }));
+                _this.userCanJoin = !_this.event.sentRequests.find(function (r) { return r.user === _this.currentUser; }) && !_this.event.participants.find(function (p) { return p.username === _this.currentUser; });
             });
         });
     };
     EventDetailsComponent.prototype.askToJoin = function () {
         var _this = this;
         this.service.sendRequest(this.id)
-            .subscribe(function (res) {
-            if (res.ok) {
-                _this.userCanJoin = false;
-            }
-        });
-    };
-    EventDetailsComponent.prototype.quit = function () {
-        var _this = this;
-        this.service.revokeRequest(this.id)
             .subscribe(function (res) {
             if (res.ok) {
                 _this.userCanJoin = false;

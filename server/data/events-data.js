@@ -169,7 +169,7 @@ module.exports = function (models) {
                         reject(err);
                     });
 
-                    resolve();
+                    resolve(request);
                 });
             });
         }

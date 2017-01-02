@@ -58,8 +58,4 @@ export class EventService {
     sendRequest(id) {
         return this.http.get(`/api/events/${id}/join`);
     }
-
-    revokeRequest(id) {
-        return this.http.get(`/api/events/${id}/join`);
-    }
 }

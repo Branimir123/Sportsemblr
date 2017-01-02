@@ -43,9 +43,6 @@
         <div *ngIf="userCanJoin">
             <button (click)="askToJoin()">Join</button>
         </div>
-        <div *ngIf="!userCanJoin">
-            <button (click)="quit()">Quit</button>
-        </div>
     </div>
     <player-rating *ngIf="userCanVote" class="col-md-4" [players]="event.participants" [sport]="event.sport"> </player-rating>
 </div>
