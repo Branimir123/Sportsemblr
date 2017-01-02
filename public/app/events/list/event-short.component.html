@@ -3,7 +3,7 @@
       <div class="view view-first">
         <img src="./assets/images/{{event.sport}}.jpg" class="img-responsive" alt="" />
         <div class="sale">{{event.price}}$</div>
-        <div class="time">{{event.date | date:"short"}}</div>
+        <div class="time">{{event.date | remainingTimePipe}}</div>
         <div class="inner_wrap">
           <p>Type of sport: {{event.sport}}</p>
           <p>Location: {{event.place}} </p>
