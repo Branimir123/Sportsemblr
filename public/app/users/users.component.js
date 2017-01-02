@@ -22,10 +22,10 @@ var UsersComponent = (function () {
         var _this = this;
         this.route.params
             .subscribe(function (params) {
-            _this.user = params['username'];
+            _this.username = params['username'];
             _this.service.getUserByUsername(_this.username)
                 .subscribe(function (res) {
-                _this.username = res;
+                _this.user = res;
                 console.log(res);
             });
         });

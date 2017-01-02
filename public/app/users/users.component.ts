@@ -19,13 +19,13 @@ export class UsersComponent implements OnInit {
     ngOnInit() {
         this.route.params
             .subscribe(params => {
-                this.user = params['username'];
+                this.username = params['username'];
 
                 this.service.getUserByUsername(this.username)
                     .subscribe(res => {
-                        this.username = res;
+                        this.user = res;
                         console.log(res);
                     });
             });
     }
- }
+}
