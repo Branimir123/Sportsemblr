@@ -1,0 +1,8 @@
+<div *ngIf="!requests.length">
+    You have no pending requests
+</div>
+<div *ngIf="requests.length">
+    <div *ngFor="let request of requests">
+        <event-request [request]="request"></event-request>
+    </div>
+</div>

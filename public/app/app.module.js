@@ -27,7 +27,6 @@ var index_8 = require("./shared/index");
 var index_9 = require("./core/services/index");
 var index_10 = require("./events/index");
 var index_11 = require("./pipes/index");
-var rating_service_1 = require("./core/services/rating.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -59,6 +58,8 @@ AppModule = __decorate([
             index_8.FooterComponent,
             player_rating_component_1.PlayerRatingComponent,
             index_6.UsersListComponent,
+            index_6.EventRequestComponent,
+            index_6.RequestsComponent,
             index_11.EventFilterPipe,
             index_11.SportFilterPipe,
             index_11.PlaceFilterPipe,
@@ -68,7 +69,8 @@ AppModule = __decorate([
             index_1.AuthGuard,
             index_9.UserService,
             index_9.EventService,
-            rating_service_1.RatingService
+            index_9.RatingService,
+            index_9.RequestService
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

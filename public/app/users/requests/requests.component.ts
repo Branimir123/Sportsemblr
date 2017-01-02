@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    templateUrl: './event-request.component.html'
+    templateUrl: './requests.component.html'
 })
-export class EventRequestsComponent implements OnInit {
+export class RequestsComponent implements OnInit {
     private requests: any[];
     private currentUser: String;
 
     constructor(private userService: UserService) {
-
+        this.requests = this.requests || [];
     }
 
     ngOnInit() {
@@ -18,8 +18,7 @@ export class EventRequestsComponent implements OnInit {
 
         this.userService.getUserByUsername(this.currentUser)
             .subscribe(res => {
-                // this.requests = res.requests;
-                console.log(res);
-            })
+                this.requests = res.requests;
+            });
     }
 }

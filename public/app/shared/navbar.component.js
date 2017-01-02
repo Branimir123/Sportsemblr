@@ -41,6 +41,9 @@ var NavigationComponent = (function () {
     NavigationComponent.prototype.profile = function () {
         this.router.navigateByUrl('/profile');
     };
+    NavigationComponent.prototype.requests = function () {
+        this.router.navigateByUrl('/requests');
+    };
     return NavigationComponent;
 }());
 NavigationComponent = __decorate([

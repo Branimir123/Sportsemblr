@@ -40,4 +40,8 @@ export class NavigationComponent {
     profile() {
         this.router.navigateByUrl('/profile');
     }
+
+    requests() {
+        this.router.navigateByUrl('/requests');
+    }
 }

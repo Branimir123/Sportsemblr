@@ -10,26 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var user_service_1 = require("./../../core/services/user.service");
 var core_1 = require("@angular/core");
-var EventRequestsComponent = (function () {
-    function EventRequestsComponent(userService) {
+var RequestsComponent = (function () {
+    function RequestsComponent(userService) {
         this.userService = userService;
+        this.requests = this.requests || [];
     }
-    EventRequestsComponent.prototype.ngOnInit = function () {
+    RequestsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.currentUser = JSON.parse(localStorage.getItem('currentUser')).username;
         this.userService.getUserByUsername(this.currentUser)
             .subscribe(function (res) {
-            // this.requests = res.requests;
-            console.log(res);
+            _this.requests = res.requests;
         });
     };
-    return EventRequestsComponent;
+    return RequestsComponent;
 }());
-EventRequestsComponent = __decorate([
+RequestsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: './event-request.component.html'
+        templateUrl: './requests.component.html'
     }),
     __metadata("design:paramtypes", [user_service_1.UserService])
-], EventRequestsComponent);
-exports.EventRequestsComponent = EventRequestsComponent;
-//# sourceMappingURL=event-requests.component.js.map
+], RequestsComponent);
+exports.RequestsComponent = RequestsComponent;
+//# sourceMappingURL=requests.component.js.map

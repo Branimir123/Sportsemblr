@@ -7,4 +7,5 @@ module.exports = (router, eventController, passportConfig) => {
     router.get('/ongoingevents', eventController.getOngoingEvents);
     router.post('/rating', passportConfig.isAuthenticated, eventController.ratePlayers);
     router.get('/events/:id/join', passportConfig.isAuthenticated, eventController.requestToJoin);
+    router.post('/events/:id/join', passportConfig.isAuthenticated, eventController.acceptRequestToJoin);
 }

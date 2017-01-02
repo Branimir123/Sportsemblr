@@ -14,16 +14,15 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { ProfileComponent } from './profile/index';
-import { UsersComponent, UsersListComponent } from './users/index';
+import { UsersComponent, UsersListComponent, RequestsComponent, EventRequestComponent } from './users/index';
 import { AlertComponent } from './alert/index';
 import { NavigationComponent, FooterComponent } from './shared/index';
 
-import { UserService, EventService } from './core/services/index';
+import { UserService, EventService, RequestService, RatingService } from './core/services/index';
 
 import { EventsListComponent, EventShortComponent, CreateEventComponent, EventDetailsComponent, EditEventComponent } from './events/index';
 
 import { EventFilterPipe, SportFilterPipe, PlaceFilterPipe, RemainingTimePipe } from './pipes/index';
-import { RatingService } from './core/services/rating.service';
 
 @NgModule({
     imports: [
@@ -50,6 +49,8 @@ import { RatingService } from './core/services/rating.service';
         FooterComponent,
         PlayerRatingComponent,
         UsersListComponent,
+        EventRequestComponent,
+        RequestsComponent,
 
         EventFilterPipe,
         SportFilterPipe,
@@ -60,7 +61,8 @@ import { RatingService } from './core/services/rating.service';
         AuthGuard,
         UserService,
         EventService,
-        RatingService
+        RatingService,
+        RequestService
     ],
     bootstrap: [AppComponent]
 })

@@ -16,6 +16,7 @@ var appRoutes = [
     { path: 'events/:id', component: index_1.EventDetailsComponent },
     { path: 'events/edit/:id', component: index_1.EditEventComponent },
     { path: 'users', component: index_5.UsersListComponent },
+    { path: 'requests', component: index_5.RequestsComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: './' }
 ];

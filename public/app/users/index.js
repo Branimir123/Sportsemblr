@@ -4,5 +4,6 @@ function __export(m) {
 }
 __export(require("./details/user-details.component"));
 __export(require("./list/users-list.component"));
-__export(require("./requests/event-requests.component"));
+__export(require("./requests/requests.component"));
+__export(require("./requests/event-request.component"));
 //# sourceMappingURL=index.js.map
