@@ -1,32 +1,19 @@
 <div class="banner">
 	<div class="container_wrap">
 		<h1>Feeling sporty? Find a team!</h1>
-		<input type="text" class="form-control" placeholder="Sport, Description, Location..." [(ngModel)]="filterProperty" />
-	</div>
-</div>
-<div class="content_top">
-	<div class="container">
-		<div class="col-md-4 bottom_nav">
-			<div class="content_menu">
-				<ul>
-					<li class="active"><a href="#">Recommended</a></li>
-					<li><a href="#">Latest</a></li>
-					<li><a href="#">Highlights</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-md-4 content_dropdown1">
-			<div class="content_dropdown">
-				<select [(ngModel)]="sportFilterProperty">
+		   <div class="dropdown-buttons">   
+            		  <div class="dropdown-button">    
+					  <select [(ngModel)]="sportFilterProperty">
 							<option *ngFor="let sport of sports">{{sport}}</option>
-				</select>
-			</div>
-			<div class="content_dropdown">
-				<select [(ngModel)]="placeFilterProperty">
+    				  </select>
+					</div>
+				     <div class="dropdown-button">
+					  <select [(ngModel)]="placeFilterProperty">
 							<option *ngFor="let place of places">{{place}}</option>
-				</select>
-			</div>
-		</div>
+					  </select>
+					 </div>
+				   </div> 
+		<input type="text" class="form-control" placeholder="Sport, Description, Location..." [(ngModel)]="filterProperty" />
 	</div>
 </div>
 <event-short class="col-md-3" event-short *ngFor="let event of ( events | eventFilterPipe:filterProperty | placeFilterPipe:placeFilterProperty | sportFilterPipe:sportFilterProperty )"
