@@ -17,8 +17,7 @@ var RequestService = (function () {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     RequestService.prototype.acceptRequest = function (eventRequest) {
-        return this.http.post("/api/events/" + eventRequest.eventId + "/join", eventRequest, this.headers)
-            .map(function (res) { return res.json(); });
+        return this.http.post("/api/events/" + eventRequest.eventId + "/join", eventRequest, this.headers);
     };
     return RequestService;
 }());

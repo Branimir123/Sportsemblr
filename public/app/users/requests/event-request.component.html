@@ -1,3 +1,5 @@
+<span *ngIf="!accepted">
 <a [routerLink]="['/users', request.user]" class="btn btn-link">{{request.user}}</a> wants to join event <a [routerLink]="['/events', request.eventId]"
     class="btn btn-link">{{request.eventId}}</a>
 <button (click)="acceptRequest()">Accept</button>
+</span>

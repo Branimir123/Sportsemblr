@@ -12,7 +12,6 @@ export class RequestService {
     }
 
     acceptRequest(eventRequest: any) {
-        return this.http.post(`/api/events/${eventRequest.eventId}/join`, eventRequest, this.headers)
-            .map(res => res.json());
+        return this.http.post(`/api/events/${eventRequest.eventId}/join`, eventRequest, this.headers);
     }
 }

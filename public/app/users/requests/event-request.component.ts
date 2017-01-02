@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { RequestService } from '../../core/services/request.service';
-import { Router } from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -9,8 +8,9 @@ import { Router } from '@angular/router';
 })
 export class EventRequestComponent {
     @Input() request: any;
+    private accepted: boolean;
 
-    constructor(private requestService: RequestService, private router: Router) {
+    constructor(private requestService: RequestService) {
 
     }
 
@@ -18,7 +18,7 @@ export class EventRequestComponent {
         return this.requestService.acceptRequest(this.request)
             .subscribe(res => {
                 console.log(res);
-                this.router.navigateByUrl(`/events/${res._id}`);
+                this.accepted = true;
             });
     }
 }
