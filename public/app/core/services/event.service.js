@@ -48,6 +48,9 @@ var EventService = (function () {
     EventService.prototype.sendRequest = function (id) {
         return this.http.get("/api/events/" + id + "/join");
     };
+    EventService.prototype.revokeRequest = function (id) {
+        return this.http.get("/api/events/" + id + "/join");
+    };
     return EventService;
 }());
 EventService = __decorate([
