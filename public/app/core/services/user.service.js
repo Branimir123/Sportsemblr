@@ -46,6 +46,10 @@ var UserService = (function () {
         localStorage.removeItem(this.localStorageUser);
         return this.http.get('api/logout');
     };
+    UserService.prototype.getUserByUsername = function (username) {
+        return this.http.get("/api/users/" + username)
+            .map(function (res) { return res.json(); });
+    };
     return UserService;
 }());
 UserService = __decorate([

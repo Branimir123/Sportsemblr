@@ -5,6 +5,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { ProfileComponent } from './profile/index';
+import { UsersComponent } from './users/index';
 import { AuthGuard } from './guards/index';
 
 const appRoutes: Routes = [
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'users/:username', component: UsersComponent },
     { path: 'events', component: EventsListComponent },
     { path: 'events/new', component: CreateEventComponent },
     { path: 'events/:id', component: EventDetailsComponent },

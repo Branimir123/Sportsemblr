@@ -21,12 +21,12 @@ var index_2 = require("./home/index");
 var index_3 = require("./login/index");
 var index_4 = require("./register/index");
 var index_5 = require("./profile/index");
-// import { UsersComponent } from './users/index';
-var index_6 = require("./alert/index");
-var index_7 = require("./shared/index");
-var index_8 = require("./core/services/index");
-var index_9 = require("./events/index");
-var index_10 = require("./pipes/index");
+var index_6 = require("./users/index");
+var index_7 = require("./alert/index");
+var index_8 = require("./shared/index");
+var index_9 = require("./core/services/index");
+var index_10 = require("./events/index");
+var index_11 = require("./pipes/index");
 var rating_service_1 = require("./core/services/rating.service");
 var AppModule = (function () {
     function AppModule() {
@@ -48,25 +48,25 @@ AppModule = __decorate([
             index_3.LoginComponent,
             index_4.RegisterComponent,
             index_5.ProfileComponent,
-            // UsersComponent,
-            index_6.AlertComponent,
-            index_7.NavigationComponent,
-            index_9.EventsListComponent,
-            index_9.EventShortComponent,
-            index_9.CreateEventComponent,
-            index_9.EventDetailsComponent,
-            index_9.EditEventComponent,
-            index_7.FooterComponent,
+            index_6.UsersComponent,
+            index_7.AlertComponent,
+            index_8.NavigationComponent,
+            index_10.EventsListComponent,
+            index_10.EventShortComponent,
+            index_10.CreateEventComponent,
+            index_10.EventDetailsComponent,
+            index_10.EditEventComponent,
+            index_8.FooterComponent,
             player_rating_component_1.PlayerRatingComponent,
-            index_10.EventFilterPipe,
-            index_10.SportFilterPipe,
-            index_10.PlaceFilterPipe,
-            index_10.RemainingTimePipe
+            index_11.EventFilterPipe,
+            index_11.SportFilterPipe,
+            index_11.PlaceFilterPipe,
+            index_11.RemainingTimePipe
         ],
         providers: [
             index_1.AuthGuard,
-            index_8.UserService,
-            index_8.EventService,
+            index_9.UserService,
+            index_9.EventService,
             rating_service_1.RatingService
         ],
         bootstrap: [app_component_1.AppComponent]

@@ -47,4 +47,9 @@ export class UserService {
 
         return this.http.get('api/logout');
     }
+
+    getUserByUsername(username) {
+        return this.http.get(`/api/users/${username}`)
+            .map(res => res.json());
+    }
 }

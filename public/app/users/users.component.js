@@ -1,5 +1,3 @@
-// import { Component, OnInit } from '@angular/core'
-// import { Router, ActivatedRoute } from '@angular/router';
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,41 +8,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// @Component({
-//     moduleId: module.id,
-//     templateUrl: 'profile.component.html'
-// })
-// export class ProfileComponent {}
 var router_1 = require("@angular/router");
-var user_1 = require("../core/models/user");
-var user_service_1 = require("../core/services/user.service");
+var user_1 = require("./../core/models/user");
+var user_service_1 = require("./../core/services/user.service");
 var core_1 = require("@angular/core");
-var ProfileComponent = (function () {
-    function ProfileComponent(service, route) {
+var UsersComponent = (function () {
+    function UsersComponent(service, route) {
         this.service = service;
         this.route = route;
         this.user = this.user || new user_1.User();
     }
-    ProfileComponent.prototype.ngOnInit = function () {
+    UsersComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
             .subscribe(function (params) {
-            _this.id = params['id'];
-            _this.service.getEventById(_this.id)
+            _this.user = params['username'];
+            _this.service.getUserByUsername(_this.username)
                 .subscribe(function (res) {
-                _this.user = res;
+                _this.username = res;
                 console.log(res);
             });
         });
     };
-    return ProfileComponent;
+    return UsersComponent;
 }());
-ProfileComponent = __decorate([
+UsersComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: './profile.component.html'
+        templateUrl: './users.component.html'
     }),
     __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute])
-], ProfileComponent);
-exports.ProfileComponent = ProfileComponent;
-//# sourceMappingURL=profile.component.js.map
+], UsersComponent);
+exports.UsersComponent = UsersComponent;
+//# sourceMappingURL=users.component.js.map

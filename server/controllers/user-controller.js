@@ -71,6 +71,19 @@ module.exports = function (data, passport) {
           console.log(err);
           return next(err);
         });
+    },
+    getUser: (req, res) => {
+      const username = req.params.username;
+
+      data.findUserByUsername(username)
+        .then(ev => {
+          return res.status(200)
+            .send(ev);
+        })
+        .catch(err => {
+          console.log(err);
+          return res.status(500);
+        });
     }
   };
 };
