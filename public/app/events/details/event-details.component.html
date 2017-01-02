@@ -12,7 +12,13 @@
                 {{event.description}}
             </p>
             <p class="group inner list-group-item-text">
-                <strong>creator: </strong> <a [routerLink]="['/users', event.creator]">{{event.creator}}</a>
+                <strong>Creator: </strong> <a [routerLink]="['/users', event.creator]">{{event.creator}}</a>
+            </p>
+            <p class="group inner list-group-item-text">
+                <strong>Participants: </strong>
+                <a *ngFor="let user of event.participants" [routerLink]="['/users', user.username]">
+                    {{user.username}}    
+                </a>
             </p>
             <p class="group inner list-group-item-text">
                 <strong>Contact number:</strong> {{event.contactPhone}}
