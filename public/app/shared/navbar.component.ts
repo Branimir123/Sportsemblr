@@ -36,6 +36,8 @@ export class NavigationComponent {
 
     users() {
         this.router.navigateByUrl('/users');
-
+    }
+    profile() {
+        this.router.navigateByUrl('/profile');
     }
 }

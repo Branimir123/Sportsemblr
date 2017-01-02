@@ -38,6 +38,9 @@ var NavigationComponent = (function () {
     NavigationComponent.prototype.users = function () {
         this.router.navigateByUrl('/users');
     };
+    NavigationComponent.prototype.profile = function () {
+        this.router.navigateByUrl('/profile');
+    };
     return NavigationComponent;
 }());
 NavigationComponent = __decorate([

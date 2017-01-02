@@ -20,6 +20,9 @@
             <li *ngIf="hasLoggedUser">
                 <a (click)="logout()">Logout</a>
             </li>
+            <li *ngIf="hasLoggedUser">
+                <a (click)="profile()">Profile</a>
+            </li>
         </ul>
     </div>
 </nav>
