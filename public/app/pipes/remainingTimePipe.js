@@ -22,7 +22,7 @@ var RemainingTimePipe = (function () {
         var today = new Date();
         var year = +splitted[0].split('-')[0];
         var month = +splitted[0].split('-')[1];
-        var days = +splitted[0].split('-')[2];
+        var day = +splitted[0].split('-')[2];
         var splittedTime = splitted[1].split(':');
         var hour = +splittedTime[0];
         var minute = +splittedTime[1];
@@ -47,10 +47,10 @@ var RemainingTimePipe = (function () {
                 //TODO Leap year
                 var currentDate = today.getDate();
                 var daysInPreviousMonth = (month != 0 ? DaysInMonths[month - 1] : DaysInMonths[11]);
-                var daysRemaining = (daysInPreviousMonth + days) - currentDate;
+                var daysRemaining = (daysInPreviousMonth + day) - currentDate;
                 if (daysRemaining < 7) {
                     if (daysRemaining == 1) {
-                        return padding + ' 1 day';
+                        return padding + '1 day';
                     }
                     return padding + daysRemaining + ' days';
                 }
@@ -65,7 +65,7 @@ var RemainingTimePipe = (function () {
         }
         //Days
         var currentDay = today.getDate();
-        var daysPassed = currentDay - days;
+        var daysPassed = day - currentDay;
         if (daysPassed > 0) {
             if (daysPassed < 7) {
                 if (daysPassed == 1) {
@@ -85,7 +85,7 @@ var RemainingTimePipe = (function () {
         remaining = hour - currentHour;
         if (remaining > 1) {
             if (remaining == 2) {
-                return padding + 'an hour';
+                return padding + '1 hour';
             }
             return padding + remaining + ' hours';
         }

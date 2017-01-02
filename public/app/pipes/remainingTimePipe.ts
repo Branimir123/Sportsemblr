@@ -17,7 +17,7 @@ export class RemainingTimePipe implements PipeTransform {
 
         let year = +splitted[0].split('-')[0];
         let month = +splitted[0].split('-')[1];
-        let days = +splitted[0].split('-')[2];
+        let day = +splitted[0].split('-')[2];
 
         let splittedTime = splitted[1].split(':');
 
@@ -49,11 +49,11 @@ export class RemainingTimePipe implements PipeTransform {
                 //TODO Leap year
                 let currentDate = today.getDate();
                 let daysInPreviousMonth = (month != 0 ? DaysInMonths[month - 1] : DaysInMonths[11]);
-                let daysRemaining = (daysInPreviousMonth + days) - currentDate;
+                let daysRemaining = (daysInPreviousMonth + day) - currentDate;
 
                 if (daysRemaining < 7) {
                     if (daysRemaining == 1) {
-                        return padding + ' 1 day';
+                        return padding + '1 day';
                     }
                     return padding + daysRemaining + ' days';
                 }
@@ -71,7 +71,7 @@ export class RemainingTimePipe implements PipeTransform {
 
         //Days
         let currentDay = today.getDate();
-        let daysPassed = currentDay - days;
+        let daysPassed = day - currentDay;
 
         if (daysPassed > 0) {
             if (daysPassed < 7) {
@@ -95,7 +95,7 @@ export class RemainingTimePipe implements PipeTransform {
 
         if (remaining > 1) {
             if (remaining == 2) {
-                return padding + 'an hour';
+                return padding + '1 hour';
             }
             return padding + remaining + ' hours';
         }
