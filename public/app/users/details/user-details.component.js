@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var router_1 = require("@angular/router");
-var user_1 = require("./../core/models/user");
-var user_service_1 = require("./../core/services/user.service");
+var user_1 = require("../../core/models/user");
+var user_service_1 = require("../../core/services/user.service");
 var core_1 = require("@angular/core");
 var UsersComponent = (function () {
     function UsersComponent(service, route) {
@@ -40,4 +40,4 @@ UsersComponent = __decorate([
     __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute])
 ], UsersComponent);
 exports.UsersComponent = UsersComponent;
-//# sourceMappingURL=users.component.js.map
+//# sourceMappingURL=user-details.component.js.map

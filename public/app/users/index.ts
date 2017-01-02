@@ -1,2 +1,2 @@
-export * from './users.component';
+export * from './details/user-details.component';
 export * from './list/users-list.component';
