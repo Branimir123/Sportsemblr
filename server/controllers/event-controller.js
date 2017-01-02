@@ -128,7 +128,7 @@ module.exports = function (data) {
                         }
                     });
 
-
+                    res.send(event);
                 })
                 .catch(err => {
                     console.log(err);

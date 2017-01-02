@@ -10,14 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var request_service_1 = require("../../core/services/request.service");
+var router_1 = require("@angular/router");
 var EventRequestComponent = (function () {
-    function EventRequestComponent(requestService) {
+    function EventRequestComponent(requestService, router) {
         this.requestService = requestService;
+        this.router = router;
     }
     EventRequestComponent.prototype.acceptRequest = function (eventRequest) {
+        var _this = this;
         return this.requestService.acceptRequest(this.request)
             .subscribe(function (res) {
             console.log(res);
+            _this.router.navigateByUrl("/events/" + res._id);
         });
     };
     return EventRequestComponent;
@@ -32,7 +36,7 @@ EventRequestComponent = __decorate([
         selector: 'event-request',
         templateUrl: './event-request.component.html'
     }),
-    __metadata("design:paramtypes", [request_service_1.RequestService])
+    __metadata("design:paramtypes", [request_service_1.RequestService, router_1.Router])
 ], EventRequestComponent);
 exports.EventRequestComponent = EventRequestComponent;
 //# sourceMappingURL=event-request.component.js.map

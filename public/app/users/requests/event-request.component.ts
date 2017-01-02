@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RequestService } from '../../core/services/request.service';
+import { Router } from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -9,7 +10,7 @@ import { RequestService } from '../../core/services/request.service';
 export class EventRequestComponent {
     @Input() request: any;
 
-    constructor(private requestService: RequestService) {
+    constructor(private requestService: RequestService, private router: Router) {
 
     }
 
@@ -17,6 +18,7 @@ export class EventRequestComponent {
         return this.requestService.acceptRequest(this.request)
             .subscribe(res => {
                 console.log(res);
+                this.router.navigateByUrl(`/events/${res._id}`);
             });
     }
 }
