@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    templateUrl: './users.component.html'
+    templateUrl: './user-details.component.html'
 })
 
 export class UsersComponent implements OnInit {
