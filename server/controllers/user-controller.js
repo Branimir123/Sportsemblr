@@ -84,6 +84,16 @@ module.exports = function (data, passport) {
           console.log(err);
           return res.status(500);
         });
+    },
+    getUsers: (req, res) => {
+      data.getAllUsers()
+        .then(users => {
+          return res.send(users);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).send(err);
+        })
     }
   };
 };

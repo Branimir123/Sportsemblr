@@ -153,6 +153,17 @@ module.exports = function (models) {
                     resolve(user);
                 });
             });
+        },
+        getAllUsers() {
+            return new Promise((resolve, reject) => {
+                User.find({}, (err, users) => {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    resolve(users);
+                });
+            });
         }
     };
 };

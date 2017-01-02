@@ -33,4 +33,9 @@ export class NavigationComponent {
     create() {
         this.router.navigateByUrl('/events/new');
     }
+
+    users() {
+        this.router.navigateByUrl('/users');
+
+    }
 }

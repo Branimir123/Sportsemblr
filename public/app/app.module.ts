@@ -14,7 +14,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { ProfileComponent } from './profile/index';
-import { UsersComponent } from './users/index';
+import { UsersComponent, UsersListComponent } from './users/index';
 import { AlertComponent } from './alert/index';
 import { NavigationComponent, FooterComponent } from './shared/index';
 
@@ -49,6 +49,7 @@ import { RatingService } from './core/services/rating.service';
         EditEventComponent,
         FooterComponent,
         PlayerRatingComponent,
+        UsersListComponent,
 
         EventFilterPipe,
         SportFilterPipe,

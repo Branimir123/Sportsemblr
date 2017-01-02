@@ -35,6 +35,9 @@ var NavigationComponent = (function () {
     NavigationComponent.prototype.create = function () {
         this.router.navigateByUrl('/events/new');
     };
+    NavigationComponent.prototype.users = function () {
+        this.router.navigateByUrl('/users');
+    };
     return NavigationComponent;
 }());
 NavigationComponent = __decorate([

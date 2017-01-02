@@ -52,4 +52,9 @@ export class UserService {
         return this.http.get(`/api/users/${username}`)
             .map(res => res.json());
     }
+
+    getUsers() {
+        return this.http.get('/api/users')
+            .map(res => res.json());
+    }
 }

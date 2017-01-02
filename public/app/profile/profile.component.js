@@ -17,8 +17,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // export class ProfileComponent {}
 var router_1 = require("@angular/router");
 var user_1 = require("../core/models/user");
-var user_service_1 = require("../core/services/user.service");
 var core_1 = require("@angular/core");
+var event_service_1 = require("../core/services/event.service");
 var ProfileComponent = (function () {
     function ProfileComponent(service, route) {
         this.service = service;
@@ -44,7 +44,7 @@ ProfileComponent = __decorate([
         moduleId: module.id,
         templateUrl: './profile.component.html'
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [event_service_1.EventService, router_1.ActivatedRoute])
 ], ProfileComponent);
 exports.ProfileComponent = ProfileComponent;
 //# sourceMappingURL=profile.component.js.map

@@ -50,6 +50,10 @@ var UserService = (function () {
         return this.http.get("/api/users/" + username)
             .map(function (res) { return res.json(); });
     };
+    UserService.prototype.getUsers = function () {
+        return this.http.get('/api/users')
+            .map(function (res) { return res.json(); });
+    };
     return UserService;
 }());
 UserService = __decorate([

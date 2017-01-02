@@ -4,12 +4,15 @@
             <a class="navbar-brand" href="#">Sportsemblr</a>
         </div>
         <ul class="nav navbar-nav">
-            <li ><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li *ngIf="!hasLoggedUser">
                 <a (click)="login()">Login</a>
             </li>
             <li>
                 <a (click)="events()">Events</a>
+            </li>
+            <li>
+                <a (click)="users()">Users</a>
             </li>
             <li *ngIf="hasLoggedUser">
                 <a (click)="create()">Create</a>

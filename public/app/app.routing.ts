@@ -5,7 +5,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { ProfileComponent } from './profile/index';
-import { UsersComponent } from './users/index';
+import { UsersComponent, UsersListComponent } from './users/index';
 import { AuthGuard } from './guards/index';
 
 const appRoutes: Routes = [
@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'events/new', component: CreateEventComponent },
     { path: 'events/:id', component: EventDetailsComponent },
     { path: 'events/edit/:id', component: EditEventComponent },
+    { path: 'users', component: UsersListComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: './' }
