@@ -85,7 +85,23 @@ module.exports = function (data) {
         requestToJoin(req, res) {
             data.findEventById(req.params.id)
                 .then(event => {
-                    return data.sendRequestToJoin(req.params.id, req.user.username, event.creator)
+                    if (event.sentRequests.find(r => r.username === user.username).length === 0) {
+
+                        event.sentRequests.push({
+                            user: req.user.username
+                        });
+
+                        event.save(err => {
+                            console.log(err);
+                            return res.status(500).send(err);
+                        })
+
+                        return data.sendRequestToJoin(req.params.id, req.user.username, event.creator)
+                    }
+
+                    return res.send({
+                        result: 'User already sent request'
+                    });
                 })
                 .then(response => {
                     return res.status(200);
