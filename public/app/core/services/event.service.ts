@@ -54,4 +54,8 @@ export class EventService {
         return this.http.post(`/api/events/${id}`, event, this.headers)
             .map(res => res.json());
     }
+
+    sendRequest(id) {
+        return this.http.get(`/api/events/${id}/join`);
+    }
 }

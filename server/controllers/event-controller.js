@@ -81,6 +81,19 @@ module.exports = function (data) {
                     console.log(err);
                     res.status(500).send(err);
                 })
+        },
+        requestToJoin(req, res) {
+            data.findEventById(req.params.id)
+                .then(event => {
+                    return data.sendRequestToJoin(req.params.id, req.user.username, event.creator)
+                })
+                .then(response => {
+                    return res.status(200);
+                })
+                .catch(err => {
+                    console.log(err);
+                    return res.status(500).send(err);
+                });
         }
     };
 };

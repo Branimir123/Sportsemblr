@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema({
             type: Number,
             default: 0
         }
+    }],
+    requests: [{
+        user: String,
+        eventId: String
     }]
 }, {
     timestamps: true

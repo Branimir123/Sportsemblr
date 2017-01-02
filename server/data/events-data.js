@@ -74,7 +74,6 @@ module.exports = function (models) {
             });
         },
         findEventByIdAndUpdate(id, otherEvent) {
-            console.log(otherEvent);
             return new Promise((resolve, reject) => {
                 Event.findByIdAndUpdate(id, otherEvent, null, (err, event) => {
                     if (err) {
@@ -142,6 +141,33 @@ module.exports = function (models) {
                         }
                     });
                 }, this);
+            });
+        },
+        sendRequestToJoin(id, user, author) {
+            return new Promise((resolve, reject) => {
+                User.findOne({
+                    username: author
+                }, (err, user) => {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    if (user.requests.find(r => {
+                            r.eventId === id && r.user === user.username
+                        }).length === 0) {
+
+                        user.requests.push({
+                            user: user.username,
+                            eventId: id
+                        });
+
+                        user.save(err => {
+                            reject(err);
+                        });
+                    }
+
+                    resolve();
+                });
             });
         }
     };

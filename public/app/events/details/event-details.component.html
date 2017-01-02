@@ -34,6 +34,9 @@
                 <strong>Created on:</strong> {{event.createdAt | date}}
             </p>
         </div>
+        <div *ngIf="userCanJoin">
+            <button (click)="askToJoin()">Join</button>
+        </div>
     </div>
     <player-rating *ngIf="userCanVote" class="col-md-4" [players]="event.participants" [sport]="event.sport"> </player-rating>
 </div>

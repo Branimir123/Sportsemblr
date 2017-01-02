@@ -45,6 +45,9 @@ var EventService = (function () {
         return this.http.post("/api/events/" + id, event, this.headers)
             .map(function (res) { return res.json(); });
     };
+    EventService.prototype.sendRequest = function (id) {
+        return this.http.get("/api/events/" + id + "/join");
+    };
     return EventService;
 }());
 EventService = __decorate([
