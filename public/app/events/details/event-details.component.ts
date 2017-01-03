@@ -14,6 +14,7 @@ export class EventDetailsComponent implements OnInit {
     private userCanVote: boolean;
     private userCanQuit: boolean;
     private userCanJoin: boolean;
+    private anyParticipants: boolean = false;
 
     constructor(private service: EventService, private route: ActivatedRoute) {
         this.event = this.event || new Event();
@@ -29,9 +30,8 @@ export class EventDetailsComponent implements OnInit {
                         this.event = res;
                         this.currentUser = JSON.parse(localStorage.getItem('currentUser')).username;
                         this.userCanVote = this.event.participants.map(p => p.username).indexOf(this.currentUser) > -1;
-                        console.log(!this.event.sentRequests.find(r => r.user === this.currentUser));
-                        console.log(!!this.event.participants.find(p => p.username === this.currentUser));
-
+                        this.anyParticipants = (this.event.participants.length > 1);
+                        
                         this.userCanJoin = !this.event.sentRequests.find(r => r.user === this.currentUser) && !this.event.participants.find(p => p.username === this.currentUser);
                     });
             });

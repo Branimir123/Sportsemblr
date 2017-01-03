@@ -16,6 +16,7 @@ var EventDetailsComponent = (function () {
     function EventDetailsComponent(service, route) {
         this.service = service;
         this.route = route;
+        this.anyParticipants = false;
         this.event = this.event || new event_1.Event();
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
@@ -28,8 +29,7 @@ var EventDetailsComponent = (function () {
                 _this.event = res;
                 _this.currentUser = JSON.parse(localStorage.getItem('currentUser')).username;
                 _this.userCanVote = _this.event.participants.map(function (p) { return p.username; }).indexOf(_this.currentUser) > -1;
-                console.log(!_this.event.sentRequests.find(function (r) { return r.user === _this.currentUser; }));
-                console.log(!!_this.event.participants.find(function (p) { return p.username === _this.currentUser; }));
+                _this.anyParticipants = (_this.event.participants.length > 1);
                 _this.userCanJoin = !_this.event.sentRequests.find(function (r) { return r.user === _this.currentUser; }) && !_this.event.participants.find(function (p) { return p.username === _this.currentUser; });
             });
         });
