@@ -16,6 +16,7 @@ var UsersComponent = (function () {
     function UsersComponent(service, route) {
         this.service = service;
         this.route = route;
+        this.noRatings = false;
         this.user = this.user || new user_1.User();
     }
     UsersComponent.prototype.ngOnInit = function () {
@@ -26,7 +27,9 @@ var UsersComponent = (function () {
             _this.service.getUserByUsername(_this.username)
                 .subscribe(function (res) {
                 _this.user = res;
-                console.log(res);
+                if (res.ratings.length === 0) {
+                    _this.noRatings = true;
+                }
             });
         });
     };

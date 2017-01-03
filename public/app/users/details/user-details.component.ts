@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
     private user: User;
     private username;
+    private noRatings: boolean = false;
 
     constructor(private service: UserService, private route: ActivatedRoute) {
         this.user = this.user || new User();
@@ -24,7 +25,9 @@ export class UsersComponent implements OnInit {
                 this.service.getUserByUsername(this.username)
                     .subscribe(res => {
                         this.user = res;
-                        console.log(res);
+                        if(res.ratings.length === 0){
+                            this.noRatings = true;
+                        }
                     });
             });
     }
