@@ -96,12 +96,10 @@ module.exports = function (models) {
                     }
 
                     user.email = options.email;
-                    user.profile.name = options.profileName;
-                    user.profile.gender = options.profileGender;
-                    user.profile.location = options.profileLocation;
-                    user.profile.website = options.profileWebsite;
+                    user.password = options.password;
                     user.username = options.username;
                     user.description = options.description;
+                    user.name = options.name;
 
                     console.log(options);
 

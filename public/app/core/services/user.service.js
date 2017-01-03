@@ -54,6 +54,11 @@ var UserService = (function () {
         return this.http.get('/api/users')
             .map(function (res) { return res.json(); });
     };
+    UserService.prototype.editUser = function (id, user) {
+        console.log(this.getHeaders());
+        return this.http.post("/api/users/" + id, user, this.getHeaders())
+            .map(function (res) { return res; });
+    };
     return UserService;
 }());
 UserService = __decorate([

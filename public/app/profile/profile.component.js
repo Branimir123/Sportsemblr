@@ -13,20 +13,32 @@ var user_1 = require("../core/models/user");
 var user_service_1 = require("../core/services/user.service");
 var core_1 = require("@angular/core");
 var ProfileComponent = (function () {
-    function ProfileComponent(service, route) {
+    function ProfileComponent(service, route, router) {
         this.service = service;
         this.route = route;
+        this.router = router;
         this.currentUser = localStorage.getItem('currentUser').indexOf('"username":"');
         this.left = 13;
         this.right = localStorage.getItem('currentUser').indexOf('","token"');
         this.user = this.user || new user_1.User();
     }
+    ProfileComponent.prototype.editProfile = function () {
+        var _this = this;
+        this.service.editUser(this.id, this.user)
+            .subscribe(function (user) {
+            console.log(user);
+            var url = "/users/" + _this.username;
+            _this.router.navigateByUrl(url);
+        });
+    };
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.username = localStorage.getItem('currentUser').substr(this.left, this.right - this.left);
         this.service.getUserByUsername(this.username)
             .subscribe(function (res) {
             _this.user = res;
+            _this.id = res._id;
+            console.log(_this.id);
         });
     };
     return ProfileComponent;
@@ -36,7 +48,7 @@ ProfileComponent = __decorate([
         moduleId: module.id,
         templateUrl: './profile.component.html'
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute, router_1.Router])
 ], ProfileComponent);
 exports.ProfileComponent = ProfileComponent;
 //# sourceMappingURL=profile.component.js.map

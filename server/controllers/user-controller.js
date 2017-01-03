@@ -94,6 +94,21 @@ module.exports = function (data, passport) {
           console.log(err);
           res.status(500).send(err);
         })
-    }
+    },
+    editUser: (req, res) =>  {
+      console.log("WE GET HERE?");
+      console.log(req);
+      const id = req.params.id,
+            options = req.body;
+            
+      data.updateUserById(id, options)
+          .then(ev => {
+                res.send(ev);
+          })
+          .catch(err => {
+                console.log(err);
+                res.send(err)
+         });
+    } 
   };
 };

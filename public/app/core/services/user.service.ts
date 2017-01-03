@@ -9,7 +9,8 @@ export class UserService {
     private signupUrl = '/api/signup';
     private localStorageUser = 'currentUser';
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) {
+     }
 
     register(user: User) {
         return this.http.post('/api/signup', { user }, this.getHeaders())
@@ -56,5 +57,11 @@ export class UserService {
     getUsers() {
         return this.http.get('/api/users')
             .map(res => res.json());
+    }
+
+    editUser(id, user){
+        console.log(this.getHeaders());
+        return this.http.post(`/api/users/${id}`,  user, this.getHeaders())
+            .map(res => res);
     }
 }
