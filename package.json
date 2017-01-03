@@ -17,7 +17,8 @@
     "dev": "concurrently \"npm run tsc:w\" \"npm start\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "nodemon ./server.js",
+    "start": "node ./server.js",
+    "start dev": "nodemon ./server.js",
     "typings": "typings",
     "postinstall": "typings install"
   },
