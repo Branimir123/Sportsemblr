@@ -31,6 +31,7 @@ var LoginComponent = (function () {
         this.userService.login(this.model.email, this.model.password)
             .subscribe(function (data) {
             _this.router.navigateByUrl(_this.returnUrl);
+            location.reload();
         }, function (error) {
             _this.loading = false;
         });
